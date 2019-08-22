@@ -1,5 +1,4 @@
-import kr.or.bit.Airplane;
-import kr.or.bit.Card;
+//import kr.or.bit.Airplane;
 
 public class Ex05_Static_CardMake {
 	public static void main(String[] args) {
@@ -19,22 +18,20 @@ public class Ex05_Static_CardMake {
 		// ...53장 생성...
 		
 		// 고객 : 카드 크기 변경 요청
-		Card.h=70;
-		Card.w=50;
-		Card c = new Card();
-//		c.h = 70;
-//		c.w = 50;
-		c.number = 1;
-		c.kind = "heart";
-		c.cardInfor();
-
-		Card c2 = new Card();
-		c2.number = 2;
-		c2.kind = "heart";
-		c2.cardInfor();
+//		Card.h=70;
+//		Card.w=50;
+//		Card c = new Card();
+////		c.h = 70;
+////		c.w = 50;
+//		c.number = 1;
+//		c.kind = "heart";
+//		c.cardInfor();
+//
+//		Card c2 = new Card();
+//		c2.number = 2;
+//		c2.kind = "heart";
+//		c2.cardInfor();
 		
 		// 당신은 53번의 수정을 하시겠습니까?
-
-		
 	}
 }

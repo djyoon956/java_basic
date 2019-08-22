@@ -13,18 +13,36 @@ package kr.or.bit;
 */
 public class Airplane {
 
-	private static int totalCount;
-
-	private String name;
-	private int number;
-
-//	public Airplane(String name, int number) { //Constructor
+//	private static int totalCount;
+//
+//	private String name;
+//	private int number;
+//
+////	public Airplane(String name, int number) { //Constructor
+////		this.name = name;
+////		this.number = number;
+////		totalCount++;
+////	}
+//
+//	public void setAirplane(String name, int number) {
 //		this.name = name;
 //		this.number = number;
 //		totalCount++;
 //	}
+//
+//	public void printAirplaneInfo() {
+//		System.out.printf("name : %s, number : %d\n", name, number);
+//	}
+//
+//	public int getTotalAirplaneCount() {
+//		return totalCount;
+//	}
 
-	public void setAirplane(String name, int number) {
+	private static int totalCount;
+	private String name;
+	private int number;
+
+	public Airplane(String name, int number) { // Constructor
 		this.name = name;
 		this.number = number;
 		totalCount++;
@@ -34,7 +52,7 @@ public class Airplane {
 		System.out.printf("name : %s, number : %d\n", name, number);
 	}
 
-	public int getTotalAirplaneCount() {
-		return totalCount;
+	public void getTotalAirplaneCount() {
+		System.out.printf("누적 대수 : %d\n", totalCount);
 	}
 }

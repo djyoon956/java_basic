@@ -1,3 +1,4 @@
+
 import kr.or.bit.Airplane;
 
 class InitTest {
@@ -25,21 +26,30 @@ public class Ex06_Static_Airplane {
 
 	public static void main(String[] args) {
 
-		InitTest initTest = new InitTest();
-		System.out.println(initTest.cv);
+//		InitTest initTest = new InitTest();
+//		System.out.println(initTest.cv);
+//
+//		Airplane airplane1 = new Airplane();
+//		airplane1.setAirplane("비행기", 1);
+//		airplane1.printAirplaneInfo();
+//
+//		Airplane airplane2 = new Airplane();
+//		airplane2.setAirplane("비행기", 2);
+//		airplane2.printAirplaneInfo();
+//
+//		Airplane airplane3 = new Airplane();
+//		airplane3.setAirplane("비행기", 3);
+//		airplane3.printAirplaneInfo();
+//
+//		System.out.printf("누적 대수 : %d\n", airplane1.getTotalAirplaneCount());
+//
+//		Airplane airplane1 = new Airplane("비행기", 1);
+//		airplane1.printAirplaneInfo();
+//		Airplane airplane2 = new Airplane("비행기", 2);
+//		airplane2.printAirplaneInfo();
+//		Airplane airplane3 = new Airplane("비행기", 3);
+//		airplane3.printAirplaneInfo();
+//		airplane1.getTotalAirplaneCount();
 
-		Airplane airplane1 = new Airplane();
-		airplane1.setAirplane("비행기", 1);
-		airplane1.printAirplaneInfo();
-
-		Airplane airplane2 = new Airplane();
-		airplane2.setAirplane("비행기", 2);
-		airplane2.printAirplaneInfo();
-
-		Airplane airplane3 = new Airplane();
-		airplane3.setAirplane("비행기", 3);
-		airplane3.printAirplaneInfo();
-
-		System.out.printf("누적 대수 : %d\n", airplane1.getTotalAirplaneCount());
 	}
 }
