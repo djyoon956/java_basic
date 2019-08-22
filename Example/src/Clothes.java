@@ -1,13 +1,13 @@
 
 public class Clothes {
-	private int price; // °¡°İ
-	private String brand; // ºê·£µå
-	private String kind; // Á¾·ù
+	private int price; // ê°€ê²©
+	private String brand; // ë¸Œëœë“œ
+	private String kind; // ì¢…ë¥˜
 
-	private static int soldcount; // ÃÑ ÆÇ¸Å°³¼ö
-	private static int totalsales; // ÃÑ ÆÇ¸Å±İ¾×
-	private static int possessioncount; // º¸À¯ÇÏ°í ÀÖ´Â °³¼ö
-	private static int capital; // ÀÚ»ê
+	private static int soldcount; // íŒë§¤ ê°¯ìˆ˜
+	private static int totalsales; // íŒë§¤ ì´ì•¡
+	private static int possessioncount; // ë³´ìœ  ê°¯ìˆ˜
+	private static int capital; // ìì‚°
 
 	static {
 		capital = 100000;
@@ -44,6 +44,6 @@ public class Clothes {
 	}
 
 	public void printClothesInfo() {
-		System.out.printf("ºê·£µå : %s, Á¾·ù : %s, °¡°İ : %d\n", brand, kind, price);
+		System.out.printf("ì˜· ë¸Œëœë“œ : %s, ì˜· ì¢…ë¥˜ : %s, ì˜· ê°€ê²© : %d\n", brand, kind, price);
 	}
 }
