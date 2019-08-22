@@ -28,7 +28,7 @@ class OverTest {
 						// Human 按眉狼 林家蔼
 		h.name = "全辨悼";
 		h.age = 100;
-		System.out.println("parameter h 林家蔼 :"+h);
+		System.out.println("parameter h 林家蔼 :" + h);
 	}
 
 	int add(int i) {
@@ -45,8 +45,8 @@ public class Ex11_Method_Overloading {
 		OverTest ot = new OverTest();
 		System.out.println(ot.add(100));
 		System.out.println(ot.add("100"));
-		Human m=new Human();
-		System.out.println("m 林家蔼 :"+m);
+		Human m = new Human();
+		System.out.println("m 林家蔼 :" + m);
 		ot.add(m);
 		System.out.println(m);
 	}
