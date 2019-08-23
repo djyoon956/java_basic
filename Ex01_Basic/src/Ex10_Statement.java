@@ -1,54 +1,60 @@
 import java.util.Scanner;
 
-// ¹İº¹¹®(while, do-while)
+// ë°˜ë³µë¬¸(while, do-while)
 
 public class Ex10_Statement {
 
 	public static void main(String[] args) {
 		int i = 10;
-		while (i >= 10) {
+		while (i >= 10) { // ì¡°ê±´ true [ ë¬´í•œ ë°˜ë³µ ]
 			System.out.println(i);
-			// ¹İµå½Ã ¸í½ÃÀûÀÎ Áõ°¡°¨
+			// ë°˜ë“œì‹œ ëª…ì‹œì ì¸ ì¦ê°€ê°
 			i--;
 		}
 
-		// 1~100±îÁö ÇÕ
-		i = 1;
+		// while (1~100) ê¹Œì§€ì˜ í•©
 		int sum = 0;
-		while (i < 101) {
-			// Áõ°¡°¨¿¡ ÁÖÀÇÇÏ¿© ÄÚµù
-			sum += i++;
-		}
-		System.out.println("1~100±îÁöÀÇ ÇÕ : " + sum);
-
-		// ±¸±¸´Ü Ãâ·Â
-		i = 2;
 		int j = 1;
-		while (i < 10) {
-			j = 1; // 1·Î Àç ÇÒ´ç
-			while (j < 10) {
-				System.out.printf("%d * %d = %d\n", i, j, i * j);
-				j++;
-			}
-			i++;
-		}
-		System.out.println("while Á¾·á ÈÄ i °ª : " + i);
+		while (j <= 100) {
+			// System.out.println(j);
+			sum += j; // sum = sum + j;
+			j++; // ëª…ì‹œì ì¸ ì¦ê°€ê°
+			// sum+=j; //ì£¼ì˜í•©ì‹œë‹¤ ....^^!
 
-		// do-while : °­Á¦Àû ½ÇÇà ¹«Á¶°Ç ÇÑ ¹ø ½ÇÇà
-		// ¸Ş´º±¸¼º
-		// 1. ÀÎ»ç¾÷¹«
-		// 2.±Ş¿©¾÷¹«
-		// ´ç½ÅÀÌ ¿øÇÏ´Â ¾÷¹« ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.
-		i = 1;
-		Scanner scanner = new Scanner(System.in);
-		int inputData = 0;
+		}
+		System.out.println("1~100ê¹Œì§€ì˜ í•© : " + sum);
+
+		// while êµ¬êµ¬ë‹¨
+		int k = 2;
+		int p = 1; // local variable
+		while (k <= 9) {
+			p = 1; // ë‹¤ì‹œ 1 ë¡œ í• ë‹¹....
+			while (p <= 9) {
+				System.out.printf("[%d]*[%d]=[%d]\t", k, p, k * p);
+				p++;
+				int n = 0;// while ì‹œì‘ ìƒì„± ,,,, while ëë‚˜ë©´ ì†Œë©¸
+			}
+			System.out.println();
+			k++;
+		}
+		System.out.println("k ê°’ : " + k);
+
+		// do ~while : ê°•ì œì  ìˆ˜í–‰(ì‹¤í–‰) ... ë¬´ì¡°ê±´ í•œë²ˆì€ ì‹¤í–‰ í•˜ê² ë‹¤
+		// do{ ì‹¤í–‰ë¬¸ } while(ì¡°ê±´)
+		//
+		// ë©”ë‰´ êµ¬ì„±
+		// 1. ì¸ì‚¬ì—…ë¬´
+		// 2. ê¸‰ì—¬ì—…ë¬´
+		// ë‹¹ì‹ ì´ ì›í•˜ëŠ” ì—…ë¬´ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” ? (ë¬´ì¡°ê±´ í•œë²ˆ ...)
+		// 3ì…ë ¥í•˜ë©´ ì¡°ê±´ì—ì„œ true ì¡°ê±´ì„ ë§Œë“¤ì–´ì„œ ë‹¤ì‹œ ì…ë ¥ ë°›ë„ë¡ ê°•ì œí•˜ëŠ” ë°©ë²•
+		Scanner sc = new Scanner(System.in);
+		int inputdata = 0;
 		do {
-			System.out.println("¼ıÀÚ ÀÔ·Â (0~10)");
-//		System.out.println("1. ÀÎ»ç¾÷¹«");	
-//		System.out.println("2. ±Ş¿©¾÷¹«");	
-			inputData = Integer.parseInt(scanner.nextLine());
-		} while (inputData > 10); // Á¶°ÇÀÌ trueÀÌ¸é do ºí·° ½ÇÇà
-		// 10º¸´Ù Å« °ªÀÌ ¿À¸é true... do ¹İº¹ ½ÇÇà
-		System.out.println("ÀÔ·Â °ª : " + inputData);
+			System.out.println("ìˆ«ìì…ë ¥í•´(0~10)");
+			inputdata = Integer.parseInt(sc.nextLine());
+		} while (inputdata > 10); // ì¡°ê±´ : true do ë¬¸ì„ ê³„ì† ì‹¤í–‰
+		// 10ë³´ë‹¤ í° ê°’ì´ ì˜¤ë©´ true .. do ë°˜ë³µ ì‹¤í–‰
+		// 0~10ê¹Œì§€ì˜ ê°’ì´ ì…ë ¥ë˜ë©´ false while íƒˆì¶œ
+		System.out.println("ë‹¹ì‹ ì´ ì…ë ¥í•œ ê°’ì€ :" + inputdata);
 	}
 }

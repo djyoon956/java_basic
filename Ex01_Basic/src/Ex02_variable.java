@@ -1,48 +1,48 @@
-//1. Ex02_variable Å¬·¡½º
-//2. Æ¯¼öÇÑ main ÇÔ¼ö¸¦ °¡Áö°í ÀÖ´Â Å¬·¡½º
-//3. static void main(String[] args) = ÇÁ·Î±×·¥ÀÇ ½ÃÀÛÁ¡ ¶Ç´Â ÁøÀÔÁ¡
+//1. Ex02_variable í´ë˜ìŠ¤
+//2. íŠ¹ìˆ˜í•œ main í•¨ìˆ˜ë¥¼ ê°€ì§€ê³  ìˆëŠ” í´ë˜ìŠ¤
+//3. static void main(String[] args) :í”„ë¡œê·¸ë¨ì˜ ì‹œì‘ì  ,ì§„ì…ì 
 
-//4. main ÇÔ¼ö°¡ ¾ø´Â Å¬·¡½º (lib) = ´Ù¸¥ Å¬·¡½º¸¦ µµ¿ÍÁÖ´Â Å¬·¡½º
+//4. main í•¨ìˆ˜ê°€ ì—†ëŠ” í´ë˜ìŠ¤ (lib) : ë‹¤ë¥¸ í´ë˜ìŠ¤ë¥¼ ë„ì™€ì£¼ëŠ” í´ë˜ìŠ¤
 
-//Tip) C#Àº static void Main(String[] args) m M Â÷ÀÌ
+//Tip)c# public static void Main() ....
 
-//º¯¼ö : variable
-//º¯¼ö scope (À¯È¿¹üÀ§) : ¼±¾ğµÇ´Â À§Ä¡
-//1. instance variable : °´Ã¼º¯¼ö class Test {int age}  ÃÊ±âÈ­ ¾ÈÇØµµ µÊ
-//2. local variable    : Áö¿ªº¯¼ö (ÇÔ¼ö¾È¿¡ ÀÖ´Â º¯¼ö) class Test{public void run(){int age}} ÃÊ±âÈ­ ÇÊ¼ö
-//2.1 ÇÔ¼ö ¾È¿¡ if ºí·Ï, for ºí·Ï ¾È¿¡ ÀÖ´Â º¯¼öµµ Áö¿ªº¯¼öÀÌÁö¸¸ scope´Â ÀÚ½ÅÀÇ ºí·Ï ±îÁö¸¸
-//3. static variable   : °øÀ¯º¯¼ö(ÀÚ¿ø) : °´Ã¼°£ °øÀ¯ÀÚ¿ø
+//ë³€ìˆ˜ : variable
+//ë³€ìˆ˜ scope (ìœ íš¨ë²”ìœ„) :ì„ ì–¸ë˜ëŠ” ìœ„ì¹˜ 
+//1. instance variable : ê°ì²´ë³€ìˆ˜ class Test { int age }
+//2. local variable    : ì§€ì—­ë³€ìˆ˜(í•¨ìˆ˜ì•ˆì— ìˆëŠ” ë³€ìˆ˜) class Test { public void run(){ int age } }
+//2.1 í•¨ìˆ˜ì•ˆì— if ë¸”ëŸ­ , for ë¸”ëŸ­  ì•ˆì— ìˆëŠ” ë³€ìˆ˜ë„ ì§€ì—­ë³€ìˆ˜ scope  ë¸”ëŸ­ ....ì•ˆì—ì„œë§Œ
+//3. static variable   : ê³µìœ ë³€ìˆ˜(ìì›) : ê°ì²´ê°„ ê³µìœ  ìì›
 
-//¿øÄ¢ : ÇÏ³ªÀÇ java ÆÄÀÏÀº ÇÏ³ªÀÇ Å¬·¡½º¸¦ °®´Â´Ù. Test.java >> class Test {}
-//¿¬½À¿ë : ÇÏ³ªÀÇ javaÆÄÀÏ ¾È¿¡ ¿©·¯°³ÀÇ Å¬·¡½º¸¦ ¸¸µé¾î »ç¿ë °¡´É (´Ü, classÁß¿¡ ÇÏ³ª¸¸ publicÀ» °¡Áø´Ù.)
+//ì›ì¹™ : í•˜ë‚˜ì˜ java íŒŒì¼  í•˜ë‚˜ì˜ í´ë˜ìŠ¤ >> Test.java >> class Test {}
+//ì—°ìŠµìš© : í•˜ë‚˜ì˜ java íŒŒì¼ ì•ˆì— ì—¬ëŸ¬ê°œì˜ í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ì–´ ì‚¬ìš© (ë‹¨ class ì¤‘ì— í•˜ë‚˜ë§Œ public ê°€ì§„ë‹¤)
 
-//class´Â ¼³°èµµÀÌ´Ù. == class´Â TypeÀÌ´Ù.(ÀÛÀº ¿©·¯°³ÀÇ Å¸ÀÔÀ» °¡Áö°í ÀÖ´Â Å« Å¸ÀÔ)
+//class ëŠ” ì„¤ê³„ë„ì´ë‹¤  == classëŠ”  Type ì´ë‹¤ (ì‘ì€ ì—¬ëŸ¬ê°œì˜ íƒ€ì…ì„ ê°€ì§€ê³  ìˆëŠ” í°íƒ€ì…)
+
 class Test {
 	int iv = 500;
-	// instance variable
-	// ÀÌ º¯¼ö´Â ÃÊ±âÈ­ ÇÏÁö ¾Ê¾Æµµ µÈ´Ù.(±âº» °ª : default)¸¦ °¡Áö°í ÀÖ´Ù.
-	// Why ÃÊ±âÈ­¸¦ ÇÏÁö ¾Ê¾Æµµ »ç¿ë °¡´É? (¼³°èµµ ÇÏ³ª·Î ¿©·¯°³ÀÇ ¾ÆÆÄÆ® ÁşÁö¸¸ Ã¢¹®ÀÇ °³¼ö´Â ´Ù¸¦ ¼öµµ ÀÖ´Ù.
-	// ´ä) °´Ã¼¸¶´Ù ´Ù¸¥ °ªÀ» °¡Áú ¼ö ÀÖ±â ¶§¹®ÀÌ´Ù.
+	//instance variable
+	//ì´ ë³€ìˆ˜ëŠ” ì´ˆê¸°í™” í•˜ì§€ ì•Šì•„ë„ ëœë‹¤ (ê¸°ë³¸ê°’:default)ë¥¼ ê°€ì§€ê³  ìˆë‹¤
+	//Why ì´ˆê¸°í™”ë¥¼ í•˜ì§€ ì•Šì•„ë„ ì‚¬ìš© ê°€ëŠ¥ í• ê¹Œìš” (hint : ì„¤ê³„ë„ í•˜ë‚˜ ì—¬ëŸ¬ê°œì˜ ì•„íŒŒíŠ¸ ..... ì°½ë¬¸ì˜ ê°œìˆ˜ëŠ” ë‹¤ë¥¼ ìˆ˜ ë„ìˆë‹¤)
+	//ë‹µ) ê°ì²´ë§ˆë‹¤ ë‹¤ë¥¸ ê°’ì„ ê°€ì§ˆ ìˆ˜ ìˆë‹¤
 
-	int window; // default °ªÀº 0
+	int window; // default ï¿½ï¿½ï¿½ï¿½ 0
 
-	Test() { // Å¬·¡½º ÀÌ¸§À¸·Î ÇÔ¼ö ¸¸µå´Â °ÍÀ» »ı¼ºÀÚ(Constructor)¶ó°í ÇÔ
-		// ¸ñÀû : member fiedl ÃÊ±âÈ­ //°´Ã¼ »ı¼º°ú µ¿½Ã¿¡ È£Ãâ
+	Test() { //ìƒì„±ì (constructor)  //ëª©ì  : member field ì´ˆê¸°í™”  //ê°ì²´ ìƒì„±ê³¼ ë™ì‹œì— í˜¸ì¶œ
 
 	}
 
-	Test(int data) { // ¿À¹ö·Îµù(overloading) : ÇÏ³ªÀÇ ÀÌ¸§À¸·Î ¿©·¯°¡Áö ±â´ÉÀ» ¼öÇà
+	Test(int data) { //ì˜¤ë²„ë¡œë”©(overloading): í•˜ë‚˜ì˜ ì´ë¦„ìœ¼ë¡œ ì—¬ëŸ¬ê°€ì§€ ê¸°ëŠ¥ì„ ìˆ˜í–‰
 		window = data;
 	}
 
 	void write() {
-		int num = 100; // Áö¿ªº¯¼ö
-						// ÇÔ¼ö°¡ È£ÃâµÇ¸é ±×¶§ ¸Ş¸ğ¸®¿¡ »ı¼ºµÇ°í ÇÔ¼ö°¡ Á¾·áµÇ¸é ¸Ş¸ğ¸®¿¡¼­ »ç¶óÁø´Ù.(num)
+		int num = 100; //local variable	
+       						//í•¨ìˆ˜ê°€ í˜¸ì¶œë˜ë©´ ê·¸ë•Œ ë©”ëª¨ë¦¬ì— ìƒì„±ë˜ê³  í•¨ìˆ˜ê°€ ì¢…ë£Œë˜ë©´ ë©”ëª¨ë¦¬ì— ì‚¬ë¼ì§„ë‹¤ (num)
 		iv = 6666;
 	}
 
 	void print() {
-//			System.out.println(num); ÀÌ°Å ¾ÈµÊ (print ÇÔ¼ö ½ÇÇà½Ã num Á¸ÀçÇÏÁö ¾Ê´Â´Ù.)
+		//System.out.println(num);  ì‚¬ìš©ë¶ˆê°€ (print í•¨ìˆ˜ ì‹¤í–‰ì‹œ num ì¡´ì¬í•˜ì§€ ì•Šì•„ìš”)
 		System.out.println("Test.iv : " + iv);
 	}
 }
@@ -51,39 +51,41 @@ public class Ex02_variable {
 
 	public static void main(String[] args) {
 		int lv = 500; // local variable
-		System.out.println("lv º¯¼ö °ª : " + lv);
-		// ½ÇÇà(javac·Î ÄÄÆÄÀÏÇÏ°í java Ex02_variable) ctrl f11
-
-//		int number; //¼±¾ğ 
-//		//ÃÊ±âÈ­¸¦ ÇÏÁö ¾ÊÀº º¯¼ö¸¦ »ç¿ëÇÒ °æ¿ì ¿¡·¯ ¹ß»ı
-//		System.out.println(number);
-//		ÃÊ±âÈ­ ÇÏÀÚ!
+		System.out.println("lv ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : " + lv);
+        //ì‹¤í–‰ (javac ì»´íŒŒì¼ >> java Ex02_variable ) ë‹¨ì¶•í‚¤ (ctrl + F11)
+		
+		//int number; //ì„ ì–¸ 
+		//ì´ˆê¸°í™”ë¥¼ í•˜ì§€ ì•Šì€ ë³€ìˆ˜ë¥¼ ì‚¬ìš©í• ë•Œ)
+		//System.out.println(number);
+		//The local variable number may not have been initialized
 
 		int number = 0;
-		System.out.println("ÃÊ±âÈ­ number : " + number);
-		// 1. Áö¿ªº¯¼ö´Â ¹İµå½Ã ÃÊ±âÈ­ ÇÏ°í »ç¿ëÇØ¾ß ÇÑ´Ù.(ÃÊ±âÈ­ = Ã³À½°ªÀ» ÀÔ·ÂÇÏ´Â °Í)
-		// 2. ¾à¼Ó (ÇÔ¼ö ¾È¿¡ ÀÖ´Â º¯¼ö´Â ¹İµå½Ã ÃÊ±âÈ­)
+		System.out.println("ï¿½Ê±ï¿½È­ number : " + number);
+		//1. ì§€ì—­ë³€ìˆ˜ëŠ” ë°˜ë“œì‹œ ì´ˆê¸°í™” í•˜ê³  ì‚¬ìš©í•´ì•¼ í•œë‹¤(ì²˜ìŒ ê°’ì„ ì…ë ¥í•˜ëŠ” ê²ƒì„ ì´ˆê¸°í™”)
+		//2. ì•½ì† (í•¨ìˆ˜ì•ˆì— ìˆëŠ” ë³€ìˆ˜ ë°˜ë“œì‹œ ì´ˆê¸°í™”)
 
-		int num; // ¼±¾ğ
-		System.out.println("Á¹·Á¿ä");
-		System.out.println("³ªµÎ Á¹·Á¿ä");
-		num = 200; // ¼±¾ğ°ú ÇÒ´çÀº ºĞ¸® °¡´ÉÇÏÁö¸¸ ¾ÈÇÏ´Â °Ô ÁÁÀ½
-		System.out.println("num : " + num);
+		int num; //ì„ ì–¸
+		System.out.println("ì¡¸ë ¤ìš”");
+		System.out.println("ë‚˜ë‘ ì¡¸ë ¤ìš”");
+		num = 200;// ì„ ì–¸ê³¼ í• ë‹¹ì€ ë¶„ë¦¬ .....
+		System.out.println("num :" + num);
 
-		// Å¬·¡½ºµµ Å¸ÀÔÀÌ´Ù.
-//		Test t = new Test();
-//		System.out.println(t.iv);
+		//í´ë˜ìŠ¤ë„ íƒ€ì…ë‹ˆë‹¤
+		//Test t = new Test();
+		//System.out.println(t.iv);
 
 		Test apt = new Test();
-		System.out.println("Ã¢¹®ÀÇ °³¼ö : " + apt.window);
-
+		System.out.println("ì°½ë¬¸ì˜ ê°œìˆ˜ : " + apt.window);
+		
 		Test apt2 = new Test(10);
-		System.out.println("Ã¢¹®ÀÇ °³¼ö : " + apt2.window);
-
+		System.out.println("ì°½ë¬¸ì˜ ê°œìˆ˜ :" + apt2.window);
+		
 		apt2.write();
 		apt2.print();
+		
+		System.out.println("ì£¼ì†Œê°’ :" + apt);
 
-		System.out.println("ÁÖ¼Ò°ª : " + apt); // ÁÖ¼Ò°ª : Test@15db9742
+		System.out.println("ì£¼ì†Œê°’ : " + apt); // ï¿½Ö¼Ò°ï¿½ : Test@15db9742
 	}
 
 }

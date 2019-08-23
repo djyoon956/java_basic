@@ -1,5 +1,5 @@
 package kr.or.bit.common;
 
-//public Á¢±ÙÀÚ Á¦°Å
+//public ì ‘ê·¼ì (x)
 class DcommonClass {
 }

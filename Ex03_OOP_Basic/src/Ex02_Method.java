@@ -21,7 +21,7 @@ public class Ex02_Method {
 
 		System.out.println("f1.sum2 return value : " + f1.sum2(-10));
 
-		System.out.println("f1.Concat return value : " + f1.Concat("¾È³ç", "¹Ý°©", "¹è°íÆÄ"));
+		System.out.println("f1.Concat return value : " + f1.Concat("111", "222", "333"));
 
 		Tv tv = f1.objMethod();
 		System.out.println("tv : " + tv);

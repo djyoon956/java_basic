@@ -1,147 +1,174 @@
-//¿¬»êÀÚ
+//ì—°ì‚°ì
 public class Ex05_Operation {
-
 	public static void main(String[] args) {
-		int result = 100 / 100;
+		int result = 100/100;
 		System.out.println(result);
-
-		result = 13 / 2; // ¸ò
+		
+		result = 13/2; //ëª«
 		System.out.println(result);
-
-		result = 13 % 2; // ³ª¸ÓÁö ±¸ÇÏ´Â ¿¬»êÀÚ %
+		
+		//ë‚˜ë¨¸ì§€ë¥¼ êµ¬í•˜ëŠ” ì—°ì‚°ì (%)
+		result = 13%2; //ë‚˜ë¨¸ì§€
 		System.out.println(result);
-
-		// Áõ°¡, °¨¼Ò(Áõ°¡°¨ ¿¬»êÀÚ : ++, --) 1¾¿ Áõ°¡, 1¾¿ °¨¼Ò
-		int i = 10;
-		++i;// ÀüÄ¡Áõ°¡ i=i+1;
-		System.out.println(i);
-		i++;// ÈÄÄ¡Áõ°¡
-		System.out.println(i);
-		// º¯¼ö°¡ È¥ÀÚ : ÀüÄ¡´ø ÈÄÄ¡´ø µ¿ÀÏ
-
-		// POINT : ÀüÄ¡ ÈÄÄ¡´Â ´Ù¸¥ ¿¬»êÀÚ¿Í °áÇÕµÆÀ» °æ¿ì ¼ºÁúÀÌ ³ª¿È
+		
+		//ì¦ê°€ , ê°ì†Œ (ì¦ê°€ê° ì—°ì‚°ì : ++ , --) 1ì”© ì¦ê°€ , 1ì”© ê°ì†Œ
+		int i =10;
+		//i = i+1;
+		++i;//ì „ì¹˜ì¦ê°€
+		System.out.println("ì „ì¹˜ i : " + i);
+		i++;//í›„ì¹˜ì¦ê°€
+		System.out.println("í›„ì¹˜ i : " + i);
+		//ë³€ìˆ˜ í˜¼ì : ì „ì¹˜ , í›„ì¹˜ ë™ì¼
+		
+		//POINT : ì „ì¹˜ í›„ì¹˜ëŠ”  ë‹¤ë¥¸ ì—°ì‚°ìì™€ ê²°í•©(ì„±ì§ˆ)
 		int i2 = 5;
 		int j2 = 4;
-
+		
 		int result2 = i2 + ++j2;
-		System.out.println("result2 : " + result2 + " j2 : " + j2);
+		System.out.println("result2 :" + result2 + " j2:" + j2);
+		//result2:10 , i2=5  , j2=5
 		result2 = i2 + j2++;
-		System.out.println("result2 : " + result2 + " j2 : " + j2);
-
-		// POINT
-		// ÀÚ¹ÙÀÇ ¿¬»ê ±ÔÄ¢
-		// Á¤¼öÀÇ ¸ğµç ¿¬»êÀº int·Î º¯È¯ ÈÄ¿¡ Ã³¸®ÇÑ´Ù
-		// byte + byte => ÄÄÆÄÀÏ·¯°¡ int + int
-		byte b = 100; // -128 ~ 127
-		byte c = 28;
-		byte d = (byte) (b + c);
-		System.out.println(d);
-		// 1. int d = b + c;
-		// 2. byte d = (b + c); µ¥ÀÌÅÍ ¼Õ½ÇÀÌ ¿Ã ¼öµµ ÀÖ´Ù.
-
-		// byte + short => int + int
-		// char + char => int + int
-		// ¿¬»êÃ³¸®½Ã
-		// POINT : ¿¬»ê¿¡¼­ intº¸´Ù ÀÛÀº Å¸ÀÔÀº int·Î º¯È¯ÇÑ´Ù. (long Á¦¿Ü)
-		// ¿¬»ê(byte, char, short -> int) ¹Ù²Ù¾î¼­ Ã³¸®
-
-		// ±ÔÄ¢ ÇÇ¿¬»êÀÚ Áß Ç¥Çö ¹üÀ§°¡ Å« Å¸ÀÔÀ¸·Î Çü º¯È¯µÈ´Ù.
-		// byte + short => int + int
-		// char + int => int + int
-		// int + long -> long + long
-
-		// Á¤¼ö + ½Ç¼ö
+		System.out.println("result2 :" + result2 + " j2:" + j2);
+		
+		//POINT
+		//ìë°”ì˜ ì—°ì‚° ê·œì¹™
+		//[ì •ìˆ˜]ì˜ ëª¨ë“  [ì—°ì‚°]ì€ [ int ] [ë³€í™˜] í›„ ì²˜ë¦¬
+		//byte + byte => ì»´íŒŒì¼ëŸ¬ê°€ int + int
+		byte b = 100; //-128 ~ 127
+		byte c = 1;
+		byte d = (byte)(b + c);
+		//1. int d = b + c;
+		//2. byte d = (byte)(b+c) ë°ì´í„° ì†ì‹¤ì´ ì˜¬ìˆ˜ë„
+		
+		//byte + short => ì»´íŒŒì¼ëŸ¬  int + int
+		//char + char  => ì»´íŒŒì¼ëŸ¬  int + int
+		//ì—°ì‚°ì²˜ë¦¬ì‹œ
+		//POINT : ì—°ì‚°ì—ì„œ int ë³´ë‹¤ ì‘ì€ íƒ€ì…ì€ int ë³€í™˜ (long ì œì–´)
+		//ì—°ì‚°(byte , char , short -> int )ë°”ê¾¸ì–´ì„œ ì²˜ë¦¬
+		
+		//ê·œì¹™ í”¼ì—°ì‚°ì ì¤‘ í‘œí˜„ ë²”ìœ„ê°€ [í° íƒ€ì…]ìœ¼ë¡œ í˜• ë³€í™˜
+		//byte + short -> int + int  >>int
+		//char + int -> int + int    >>int
+		//int + long -> long + long  >>long
+		
+		//ì •ìˆ˜ + ì‹¤ìˆ˜ 
 		long ll = 10000000000L;
-		float ff = 1.2F;
-		float fresult = ll + ff; // ½Ç¼ö°¡ ÀÌ±ä´Ù
-		System.out.println(fresult);
-
-		float num2 = 10.45F;
+		float ff = 1.2f;
+		float fresult = ll + ff; //ìŠ¹ì ì‹¤ìˆ˜
+		System.out.println("fresult : " + fresult);
+		
+		float num2 = 10.45f;
 		int num3 = 20;
-		float result5 = num2 + num3; // ¹Ş´Â ÂÊÀ» Å« Å¸ÀÔÀ¸·Î ÇÏ¸é »ó°ü ¾øÀ½ float+int >> float + float
-		System.out.println(result5);
-		// int result5=(int)(num2+num3);
-		// System.out.println(result5); //¿ø·¡ 30.45ÀÎµ¥ 30ÀÌ Ãâ·ÂµÇ´Ï 0.45¸¸Å­ µ¥ÀÌÅÍ ¼Õ½ÇÀÌ ÀÏ¾î³­´Ù.
-
-		char c2 = '!'; // charÀº Á¤¼öÅ¸ÀÔ (³»ºÎÀûÀ¸·Î Á¤¼ö)
+		//num2 + num3
+		//ë°›ëŠ” ìª½ì„ í° íƒ€ì… : float + int >>  float + float
+		//float result5 = num2 + num3;
+		//System.out.println(result5); //30.45
+		
+		int result5 = (int)(num2 + num3);
+		System.out.println(result5); //ì •ìˆ˜ë¶€ë§Œ ....
+		
+		char c2 = '!'; //char ì •ìˆ˜íƒ€ì… (ë‚´ë¶€ì ìœ¼ë¡œ ....ì •ìˆ˜)
 		char c3 = '!';
-
-		// c2+c3 °á°ú´Â?
-		// char result6=c2+c3; int + int°¡ µÇ¾î¹ö¸®±â ¶§¹®¿¡ ¾ÈµÊ
+		
+		//c2 + c3 ê²°ê³¼ëŠ” ...
+		//char result6 = c2 + c3; ì•ˆë˜ìš© ... int + int
 		int result6 = c2 + c3;
 		System.out.println("result6 : " + result6);
-		// ´õÇÑ °ªÀ» ¹®ÀÚ·Î Ãâ·Â : 10Áø¼ö 66À» ¾Æ½ºÅ°ÄÚµåÇ¥ ¹®ÀÚ·Î Ãâ·Â
-		System.out.println((char) result6);
-
-		// Á¦¾î¹®
-		// Áß¼Ò±â¾÷ ½ÃÇè¹®Á¦(±¸±¸´Ü Ãâ·Â) >> (º° Âï±â)
-		// main ÇÔ¼ö¾È¿¡ ÀÖ´Â local variable
+		//ë”í•œ ê°’ì„ ë¬¸ìë¡œ ì¶œë ¥ : ì‹­ì§„ìˆ˜ 66ì„ ì•„ìŠ¤í‚¤ì½”ë“œí‘œ ë¬¸ì ..
+		System.out.println((char)result6);
+		
+		//ì œì–´ë¬¸ 
+		//ì¤‘ì†Œê¸°ì—… ì‹œí—˜ë¬¸ì œ(êµ¬êµ¬ë‹¨ ì¶œë ¥) >> ë³„ì°ê¸°
+		//2~9
+		//2 >> 1~9
+		//3 >> 1~9
+		
+		//main í•¨ìˆ˜ ì•ˆì— ìˆëŠ” local variable
+		
 		int sum = 0;
-		for (int j = 1; j <= 100; j++) {
-			// System.out.println("j : "+j);
-			if (j % 2 == 0) { // ==´Â true, false¸¸ ³ªÅ¸³½´Ù.
-				// System.out.println("j : " + j);
-				sum += j;// sum = sum + j;
-			} // j´Â for¹®¾È¿¡¼­ ½ÇÇàµÇ°í »ç¶óÁö´Ï ¿©·¯¹ø »ç¿ë °¡´É!!!!!
+		for(int j =1; j<= 100 ; j++) {
+			System.out.println("j++ : " + j);
+			if(j%2 == 0) {  // == true , false
+				//System.out.println("j :" + j);
+				sum+=j;//sum=sum+j;
+			}
 		}
 		System.out.println(sum);
-
-		// ==¿¬»êÀÚ(°ªÀ» ºñ±³ÇÏ´Â ¿¬»êÀÚ)
-		if (10 == 10.0F) { // °ªÀ» ºñ±³ÇÏ±â¶§¹®¿¡ Å¸ÀÔÀÌ ´Ş¶óµµ True°¡ ³ª¿Â´Ù.
+		
+		// ==ì—°ì‚°ì (ê°’ì„ ë¹„êµí•˜ëŠ” ì—°ì‚°ì)
+		if(10 == 10.0f) {
 			System.out.println("True");
-		} else {
+		}else {
 			System.out.println("False");
 		}
-
-		// ! ºÎÁ¤¿¬»êÀÚ
-		if ('A' != 65) { // °°Áö ¾Ê´Ï?
-			System.out.println("°°Áö ¾Ê¾Æ");
-		} else {
-			System.out.println("°°¾Æ");
+		
+		//! ë¶€ì •ì—°ì‚°ì
+		if('A' != 65) { //ê°™ì§€ ì•Šë‹ˆ
+			System.out.println("ì–´ ê°™ì§€ ì•Šì•„ ...");
+		}else {
+			System.out.println("ì–´ ê°™ì€ ê°’ì´ì•¼");
 		}
-		// ¾Ï±âÇÏÀÚ(POINT)
-		// »ïÇ×¿¬»êÀÚ
-		int p = 10;
-		int k = -10;
-		int result8 = (p == k) ? p : k;
-		System.out.println("result8 : " + result8);
-		// »ïÇ×¿¬»êÀÚ´Â if¹®°ú È£È¯ °¡´É
-
-		if (p == k) {
+		
+		//ì•”ê¸°í•˜ì (POINT)
+		//ì‚¼í•­ì—°ì‚°ì 
+		int p =10;
+		int k =-10;
+		int result8 = (p == k)? p : k;   //  ?   :
+		//System.out.println("result3 :" + result8);
+		//ì‚¼í•­ì—°ì‚°ì if ë¬¸ê³¼ í˜¸í™˜ ê°€ëŠ¥
+		//ifë¬¸
+		//int result8 = 0;
+		if(p==k) {
 			result8 = p;
-		} else {
+		}else {
 			result8 = k;
 		}
-
-		// Áø¸®Ç¥
+		System.out.println("result3 :" + result8);
+		
+		//ì§„ë¦¬í‘œ
 		/*
-		 * (³í¸®¿¬»ê) 0 : false 1 : true OR AND 0 0 0 0 0 1 1 0 1 0 1 0 1 1 1 1
-		 * 
-		 * sql¹® (oracle) select * from emp where empno=1000 and sal > 2000 //±×¸®°í
-		 * 
-		 * select * from emp where empno=1000 or sal > 2000 //¶Ç´Â
-		 * 
-		 * ¿¬»êÀÚ | or ¿¬»êÀÚ & and ¿¬»êÀÚ 0°ú 1·Î º¯È¯ÇØ¼­ bit¿¬»êÀ» ÇØ¶ó
-		 * 
-		 * || ³í¸®¿¬»ê && ³í¸®¿¬»ê
-		 */
-
+		  (ë…¼ë¦¬ì—°ì‚°)
+		  0 : false
+		  1 : true
+		        OR     AND
+		  0 0   0       0
+		  0 1   1       0 
+		  1 0   1       0
+		  1 1   1       1
+		  
+		 sqlë¬¸ (oracle)  
+		 select *
+		 from emp
+		 where empno=1000 and sal > 2000  //ê·¸ë¦¬ê³   
+		 
+		 select *
+		 from emp
+		 where empno=1000 or sal > 2000  //ë˜ëŠ”  , ì´ê±°ë‚˜
+		 
+		 ì—°ì‚°ì
+		 | or ì—°ì‚°ì
+		 & and ì—°ì‚°ì
+		 0 ê³¼ 1 ë³€í™˜í•´ì„œ bit ì—°ì‚°
+		 
+		 || ë…¼ë¦¬ì—°ì‚°
+		 && ë…¼ë¦¬ì—°ì‚° 	 
+		*/
+		
 		int x = 3;
 		int y = 5;
-		System.out.println("x|y : " + (x | y));
-		System.out.println("x&y : " + (x & y));
-		// ½ÊÁø¼ö 3À» -> 2Áø¼ö(0°ú 1·Î¸¸ ÀÌ·ç¾îÁø °ªÀ¸·Î ¹Ù²Ù¾î¼­)
-		// 2 0½Â, 2 1½Â
-		// 8 4 2 1
-		// 0 0 1 1 >> 3ÀÇ 2Áø¼ö °ª
-		// 0 1 0 1 >> 5ÀÇ 2Áø¼ö °ª
-		// 0 1 1 1 >> OR¿¬»ê -> 7
-		// 0 0 0 1 >> AND¿¬»ê -> 1
-
-		// POINT ³í¸®¿¬»ê(&&(and), ||(or))
-		// if(10 > 0 && -1 > 1 && 100 > 2 && 1 > -1 &&....){½ÇÇà¹®} //True, False°¡ °áÁ¤µÇ´Â¼ø°£
-		// ³¡³­´Ù.
-		// if(10 > 0 || -1 > 1 || 100 > 2 || 1 > -1 ||....){½ÇÇà¹®}
+		System.out.println("x|y:" +(x|y));
+		//ì‹­ì§„ìˆ˜ 3ì„ -> 2ì§„ìˆ˜ (0ê³¼ 1ë¡œë§Œ ì´ë£¨ì–´ì§„ ê°’ìœ¼ë¡œ ë°”ê¾¸ì–´ì„œ)
+		//2 0ìŠ¹ , 2 1ìŠ¹
+		// 128 64 32 16 8 4 2 1
+		//              0 0 1 1  >> 3 2ì§„ìˆ˜ê°’
+		//              0 1 0 1  >> 5 2ì§„ìˆ˜ê°’
+		//OR            0 1 1 1  >> 4+2+1 > 7
+		//AND           0 0 0 1  >> 1
+		
+		System.out.println("x&y:" +(x&y));
+		
+		//POINT ë…¼ë¦¬ì—°ì‚°( &&(and) , ||(or) )
+		//if(10 > 0 && -1 > 1 && 100 > 2 && 1 > -1 && .....){ì‹¤í–‰ë¬¸} 
+		//if(10 > 0 || -1 > 1 || 100 > 2 || 1 > -1 || .....){ì‹¤í–‰ë¬¸}
 	}
-
 }

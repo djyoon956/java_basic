@@ -1,59 +1,59 @@
 import java.util.Scanner;
 
-// Á¡½É ¸Ş´º ¼³Á¤ÇÏ±â
-
-// ¾Æ·¡ ¸Ş´ºÁß ÇÏ³ª¸¦ ¼±ÅÃÇÏ¼¼¿ä.
-// 1. ¹é¹Ú
-// 2.Â¥Àå¸é
-// 3. ¾Æ¹«°Å³ª
-// ¾ø´Â ¼ıÀÚ ÀÔ·Â½Ã ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä....
+//ì ì‹¬ë©”ë‰´ ì„¤ì •í•˜ê¸°
+//ì•„ë˜ ë©”ë‰´ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì„¸ìš”
+//1. ë°±ë°˜
+//2. ì§œì¥ë©´
+//3. ì•„ë¬´ê±°ë‚˜ 
+//> 4 ì…ë ¥í•˜ë©´  ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš” .... do ~ while
 public class Ex09_do_while_static_menu {
 
 	static Scanner sc = new Scanner(System.in);
 
 	static void inputRecord() {
-		System.out.println("¼ºÀû µ¥ÀÌÅÍ ÀÔ·Â : ");
+		System.out.println("ì„±ì  ë°ì´í„° ì…ë ¥:");
 	}
 
 	static void deleteRecord() {
-		System.out.println("¼ºÀû µ¥ÀÌÅÍ »èÁ¦ : ");
+		System.out.println("ì„±ì  ë°ì´í„° ì‚­ì œ:");
 	}
 
 	static void sortRecord() {
-		System.out.println("¼ºÀû µ¥ÀÌÅÍ Á¤·Ä : ");
+		System.out.println("ì„±ì  ë°ì´í„° ì •ë ¬");
 	}
 
 	static int displayMenu() {
-		System.out.println("***************");
-		System.out.println("*****¼ºÀû °ü¸®*****");
-		System.out.println("1. ÇĞ»ı ¼ºÀû ÀÔ·ÂÇÏ±â");
+		System.out.println("*************");
+		System.out.println("****ì„±ì ê´€ë¦¬****");
+		System.out.println("1.í•™ìƒì„±ì  ì…ë ¥í•˜ê¸°");
 		System.out.println();
-		System.out.println("2. ÇĞ»ı ¼ºÀû »èÁ¦ÇÏ±â");
+		System.out.println("2.í•™ìƒì„±ì  ì‚­ì œí•˜ê¸°");
 		System.out.println();
-		System.out.println("3. ÇĞ»ı ¼ºÀû ÀÌ¸§¼ø Á¤·ÄÇÏ±â");
+		System.out.println("3.í•™ìƒì„±ì  ì´ë¦„ìˆœ ì •ë ¬í•˜ê¸°");
 		System.out.println();
-		System.out.println("4. ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("4.í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 		System.out.println();
 
 		int menu = 0;
 		do {
 			try {
-
 				menu = Integer.parseInt(sc.nextLine());
-				if (menu >= 1 && menu <= 4)
-					break;
-				else
-					throw new Exception("¸Ş´º ¼±ÅÃ ¹®Á¦ ¹ß»ı");
+				if (menu >= 1 && menu <= 4) {
+					break; // while íƒˆì¶œ
+				} else {
+					throw new Exception("ë©”ë‰´ì„ íƒ ë¬¸ì œ ë°œìƒ");
+				}
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
-				System.out.println("¸Ş´º 1~4±îÁö ¼±ÅÃ");
+				System.out.println("ë©”ë‰´ ì„ íƒ ë¬¸ì œ");
+				System.out.println("ë©”ë‰´ 1~4ë²ˆê¹Œì§€ ì„ íƒ");
 			}
-		} while (true);
+		} while (true); // for(;;){}
 
-		return menu;
+		return menu; // 1~4ê¹Œì§€ ë²ˆí˜¸ì¤‘ í•˜ë‚˜ë¥¼ return
 	}
 
 	public static void main(String[] args) {
+
 		while (true) {
 			switch (displayMenu()) {
 			case 1:
@@ -66,9 +66,9 @@ public class Ex09_do_while_static_menu {
 				sortRecord();
 				break;
 			case 4:
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
-				System.exit(0);
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œí•©ë‹ˆë‹¤");
 				// return;
+				System.exit(0); // í”„ë¡œê·¸ë¨ì„ ê°•ì œ ì¢…ë£Œ
 			}
 		}
 	}

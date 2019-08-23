@@ -4,45 +4,46 @@ public class Ex09_do_while_menu {
 	Scanner sc = new Scanner(System.in);
 
 	void inputRecord() {
-		System.out.println("¼ºÀû µ¥ÀÌÅÍ ÀÔ·Â : ");
+		System.out.println("ì„±ì  ë°ì´í„° ì…ë ¥:");
 	}
 
 	void deleteRecord() {
-		System.out.println("¼ºÀû µ¥ÀÌÅÍ »èÁ¦ : ");
+		System.out.println("ì„±ì  ë°ì´í„° ì‚­ì œ:");
 	}
 
 	void sortRecord() {
-		System.out.println("¼ºÀû µ¥ÀÌÅÍ Á¤·Ä : ");
+		System.out.println("ì„±ì  ë°ì´í„° ì •ë ¬");
 	}
 
 	int displayMenu() {
-		System.out.println("***************");
-		System.out.println("*****¼ºÀû °ü¸®*****");
-		System.out.println("1. ÇĞ»ı ¼ºÀû ÀÔ·ÂÇÏ±â");
+		System.out.println("*************");
+		System.out.println("****ì„±ì ê´€ë¦¬****");
+		System.out.println("1.í•™ìƒì„±ì  ì…ë ¥í•˜ê¸°");
 		System.out.println();
-		System.out.println("2. ÇĞ»ı ¼ºÀû »èÁ¦ÇÏ±â");
+		System.out.println("2.í•™ìƒì„±ì  ì‚­ì œí•˜ê¸°");
 		System.out.println();
-		System.out.println("3. ÇĞ»ı ¼ºÀû ÀÌ¸§¼ø Á¤·ÄÇÏ±â");
+		System.out.println("3.í•™ìƒì„±ì  ì´ë¦„ìˆœ ì •ë ¬í•˜ê¸°");
 		System.out.println();
-		System.out.println("4. ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("4.í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 		System.out.println();
 
 		int menu = 0;
 		do {
 			try {
-
 				menu = Integer.parseInt(sc.nextLine());
-				if (menu >= 1 && menu <= 4)
-					break;
-				else
-					throw new Exception("¸Ş´º ¼±ÅÃ ¹®Á¦ ¹ß»ı");
+				if (menu >= 1 && menu <= 4) {
+					break; // while íƒˆì¶œ
+				} else {
+					throw new Exception("ë©”ë‰´ì„ íƒ ë¬¸ì œ ë°œìƒ");
+				}
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
-				System.out.println("¸Ş´º 1~4±îÁö ¼±ÅÃ");
+				System.out.println("ë©”ë‰´ ì„ íƒ ë¬¸ì œ");
+				System.out.println("ë©”ë‰´ 1~4ë²ˆê¹Œì§€ ì„ íƒ");
 			}
-		} while (true);
+		} while (true); // for(;;){}
 
-		return menu;
+		return menu; // 1~4ê¹Œì§€ ë²ˆí˜¸ì¤‘ í•˜ë‚˜ë¥¼ return
 	}
 
 	public static void main(String[] args) {
@@ -59,7 +60,7 @@ public class Ex09_do_while_menu {
 				ex.sortRecord();
 				break;
 			case 4:
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œí•©ë‹ˆë‹¤");
 				System.exit(0);
 				// return;
 			}

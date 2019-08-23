@@ -3,25 +3,27 @@
 public class Ex06_Operation {
 	public static void main(String[] args) {
 		int sum = 0;
-		// ´ëÀÔ¿¬»êÀÚ (+= , -= , *=, ) ½À°üÀûÀ¸·Î
-		sum += 1; // sum=sum+1
-		sum -= 1; // sum=sum-1;
+		// ëŒ€ì…ì—°ì‚°ì (+= , -= , *= , ) ìŠµê´€ì ìœ¼ë¡œ
+		sum += 1;// sum=sum+1;
+		sum -= 1;// sum=sum-1;
 		System.out.println("sum:" + sum);
 
-		// °£´ÜÇÑ ÇĞÁ¡°è»ê±â
-		// ÇĞÁ¡ ... A+, A-, B+, B- (Score)
-		// Á¡¼ö : 94Á¡
-		// 95Á¡ ÀÌ»ó A+
-		// ±× ¿Ü´Â A-
-		// 90Á¡ ÀÌ»óÀÌ¸é A ÀÎµ¥ ... 95 A+, 93 A-
-		int score = 55;
-		String grade = ""; // ¹®ÀÚ¿­ ÃÊ±âÈ­
-		System.out.println("´ç½ÅÀÇ Á¡¼ö´Â? :" + score);
+		// ê°„ë‹¨í•œ í•™ì  ê³„ì‚°ê¸°
+		// í•™ì  ... A+ , A- , B+ , B- (score)
+		// ì ìˆ˜: 94ì 
+		// 95ì  ì´ìƒ A+
+		// ê·¸ì™¸ëŠ” A-
+
+		// 90ì  ì´ìƒì´ë©´ A ì¸ë° ... 95 A+ ,93 A-
+		int score = 90;
+		String grade = ""; // ë¬¸ìì—´ ì´ˆê¸°í™”
+		System.out.println("ë‹¹ì‹ ì˜ ì ìˆ˜ëŠ” : " + score);
 
 		if (score >= 90) {
 			grade = "A";
 			if (score >= 95) {
-				grade += "+";
+				// grade = grade+"+";
+				grade += "+"; // A+
 			} else {
 				grade += "-";
 			}
@@ -42,129 +44,117 @@ public class Ex06_Operation {
 		} else {
 			grade = "F";
 		}
-		System.out.println("±×·¯¹Ç·Î ´ç½ÅÀÇ ÇĞÁ¡Àº? :" + grade);
 
-		// sysout+ctrl+space = system.out.println
-		// ÄÚµå Á¤·ÄÇÏ±â = ctrl+A ºí·°¼±ÅÃ > ctrl+shift+f
-		int data = 55;
-		switch (data) {
-		case 100:
-			System.out.println("100ÀÔ´Ï´Ù");
-			break;
-		case 90:
-			System.out.println("90ÀÔ´Ï´Ù");
-			break;
-		case 80:
-			System.out.println("80ÀÔ´Ï´Ù");
-			break;
-		default:
-			System.out.println("default");
+		System.out.println("ë‹¹ì‹ ì˜ í•™ì ì€ : " + grade + "ì…ë‹ˆë‹¤");
 
-		}
-
-		// break´Â °­Á¦ »çÇ×ÀÌ ¾Æ´Õ´Ï´Ù. (ÇÊ¿ä¿¡ µû¶ó¼­ ¾²¸é µÈ´Ù.)
-		// Case Á¶°Ç ¸¸Á·ÇÏ´Â ÀÌÈÄºÎÅÍ ~ break±îÁö Ãâ·ÂÇÑ´Ù.
-		data = 80;
-		switch (data) {
-		case 100:
-			System.out.println("100ÀÔ´Ï´Ù");
-		case 90:
-			System.out.println("90ÀÔ´Ï´Ù");
-		case 80:
-			System.out.println("80ÀÔ´Ï´Ù");
-		default:
-			System.out.println("default");
-		}
-
-		int mouth = 2;
-		String res = "";
-
-		switch (mouth) {
-		case 1:
-			System.out.println(1);
-		case 3:
-			System.out.println(3);
-		case 5:
-			System.out.println(5);
-		case 7:
-			System.out.println(7);
-		case 8:
-			System.out.println(8);
-		case 10:
-			System.out.println(10);
-		case 12:
-			res = "31";
-			break;
-
-		case 4:
-		case 6:
-		case 9:
-		case 11:
-			res = "30";
-			break;
-
-		case 2:
-			res = "29";
-			break;
-
-		default:
-			res = "¿ùÀÌ¾Æ´Õ´Ï´Ù.";
-		}
-		System.out.println(mouth + "¿ùÀº " + res + "ÀÏ ±îÁöÀÔ´Ï´Ù.");
-
-		// ³­¼ö(·£´ı°ª : ÀÓÀÇÀÇ ÃßÃâ°ª
-		// java.lang.Math
-		// default > java.lang.Math
-		// java ÆäÀÌÁö default·Î ¿­¾î³õÀº Æú´õ-> (java.lang) >> import java.lang.* °¡ »ı·«µÇ¾îÀÖÀ½.
-		// ÆäÀÌÁö»ó´Ü(¿øÄ¢) import java.lang.Math
-
-		// Math.random()
-		// static Random() °´Ã¼ »ı¼º ¾øÀÌµµ »ç¿ë °¡´É
-		// static ÇÔ¼ö´Â ÀÚÁÖ »ç¿ë
-		// Returns a double value with a positive sign, greater than or equal to 0.0 and
-		// less than 1.0
-		// °á°ú : 0.0<=random<1.0
-
-		System.out.println("Math.random() : " + Math.random());
-		System.out.println("Math.random() * 10 : " + Math.random() * 10);
-
-		// 0~9±îÁöÀÇ Á¤¼ö°ª¸¸
-		System.out.println("(int)Math.random() * 10 : " + (int) (Math.random() * 10));
-		// 1~10±îÁöÀÇ Á¤¼ö°ª¸¸
-		System.out.println("(int)Math.random() * 10 : " + ((int) (Math.random() * 10) + 1));
-
-		/*
-		 * ¿ì¸®´Â ¹éÈ­Á¡ °æÇ° ½Ã½ºÅÛÀ» ¸¸µé·Á°íÇÑ´Ù. °æÇ° ½Ã½ºÅÛÀº ³ª¿À´Â Á¡¼ö¿¡ µû¶ó °æÇ°À» Áö±ŞÇÏ´Â ½Ã½ºÅÛÀÌ´Ù. °æÇ° ÃßÃµ½Ã 1000Á¡ÀÌ ³ª¿À¸é
-		 * °æÇ°À¸·Î TV, NoteBook, ³ÃÀå°í, ÇÑ¿ì ¼¼Æ®, ÈŞÁö 
-		 * °æÇ° ÃßÃµ½Ã 900Á¡ÀÌ ³ª¿À¸é °æÇ°À¸·Î NoteBook, ³ÃÀå°í, ÇÑ¿ì ¼¼Æ®, ÈŞÁö 
-		 * °æÇ° ÃßÃµ½Ã 800Á¡ÀÌ ³ª¿À¸é °æÇ°À¸·Î ³ÃÀå°í, ÇÑ¿ì ¼¼Æ®, ÈŞÁö 
-		 * °æÇ° ÃßÃµ½Ã 700Á¡ÀÌ ³ª¿À¸é °æÇ°À¸·Î ÇÑ¿ì ¼¼Æ®, ÈŞÁö 
-		 * °æÇ° ÃßÃµ½Ã 600Á¡ÀÌ ³ª¿À¸é °æÇ°À¸·Î ÈŞÁö
-		 * 
-		 * ±× ¿Ü 100~500Á¡±îÁö´Â Ä©¼Ö 
-		 * °æÇ° ½Ã½ºÅÛ Á¤¼öÀÇ ¹üÀ§´Â 100~1000Á¡±îÁö ÇÑÁ¤µÇ¾îÀÖ´Ù.
-		 * 
-		 * »ç¿ëÀÚ°¡ °æÇ° ½Ã½ºÅÛ »ç¿ë½Ã ·¥´ıÇÏ°Ô 100~1000°ªÀÌ ³ª¿À°Ô µÇ¾î ÀÖ½À´Ï´Ù.
-		 */
+		// syso + ctrl+space ìë™ì™„ì„±
+		// ì½”ë“œ ì •ë ¬í•˜ê¸°
+		// ctrl + A ë¸”ëŸ­ì„ íƒ > ctrl + shift + F (ìë™ì •ë ¬)
 		
-		int score1 = ((int) (Math.random() * 10) + 1) * 100;
-		String result = "°æÇ° :";
-		switch (score1) {
-		case 1000:
-			result += " TV";
-		case 900:
-			result += " NoteBook";
-		case 800:
-			result += " ³ÃÀå°í";
-		case 700:
-			result += " ÇÑ¿ì ¼¼Æ®";
-		case 600:
-			result += " ÈŞÁö";
-			break;
-		default:
-			result += " Ä©¼Ö";
+		int data =100;
+		switch(data) {
+			case 100: System.out.println("100ì…ë‹ˆë‹¤");
+				break;
+			case 90: System.out.println("90ì…ë‹ˆë‹¤");
+				break;
+			case 80: System.out.println("80ì…ë‹ˆë‹¤");
+				break;
+			default: System.out.println("default");	
 		}
-		System.out.println("Á¡¼ö : " + score1);
-		System.out.println(result);
+		
+		//break ê°•ì œ ì‚¬í•­ì´ ì•„ë‹™ë‹ˆë‹¤ (í•„ìš”ì— ë”°ë¼ì„œ)
+		//case ì¡°ê±´ ë§Œì¡±í•˜ëŠ” ê·¸ ì´í›„ë¶€í„° ë‹¤ ì‹¤í–‰
+		data = 80;
+		switch(data) {
+			case 100: System.out.println("100ì…ë‹ˆë‹¤~");
+			case 90: System.out.println("90ì…ë‹ˆë‹¤~");
+			case 80: System.out.println("80ì…ë‹ˆë‹¤~");
+			default: System.out.println("default~");	
+		}
+		
+		int month = 2;
+		String res="";
+		switch(month) {
+			case 1: System.out.println("1");
+			case 3: System.out.println("3");
+			case 5: System.out.println("5");
+			case 7: System.out.println("7");
+			case 8: System.out.println("8");
+			case 10:System.out.println("10");
+			case 12:res = "31";
+			break;
+			
+			case 4:
+			case 6:
+			case 9:
+			case 11: res="30";
+			break;
+			
+			case 2: res="29";
+			break;
+			
+			default : res="ì›”ì´ ì•„ë‹™ë‹ˆë‹¤";
+
+		}
+		System.out.println(month + "ì›”ì€" + res + "ì¼ê¹Œì§€ ì…ë‹ˆë‹¤.");
+		
+		//ë‚œìˆ˜(ëœë¤ê°’ : ì„ì˜ì˜ ì¶”ì¶œê°’)
+		//java.lang.Math (Math í´ë˜ìŠ¤)
+		//default > java.lang.Math
+		//java í˜ì´ì§€ default ì—´ì–´ ë†“ì€ í´ë”ê°€ ìˆì–´ìš” (java.lang) >> import java.lang.*
+		//í˜ì´ì§€ ìƒë‹¨(ì›ì¹™) import java.lang.Math ì‚¬ìš©í•˜ê² ìŠµë‹ˆë‹¤
+		
+		//Math.Random()
+		//static Random() ê°ì²´ ìƒì„± ì—†ì´ë„ ì‚¬ìš© ê°€ëŠ¥(static í•¨ìˆ˜ ìì£¼ ì‚¬ìš©í•˜ë‹ˆê¹Œ)
+		//Returns a double value with a positive sign, greater than or equal to 0.0 and less than 1.0.
+		//ê²°ê³¼ : 0.0 <= random < 1.0 
+		
+		System.out.println("Math.random(): " + Math.random());
+		System.out.println("Math.random() * 10: " + Math.random() *10);
+		//0~9 ê¹Œì§€ì˜ ì •ìˆ˜ê°’ë§Œ
+		System.out.println("(int)(Math.random() *10): " + (int)(Math.random() *10));
+		
+		//1~10ê¹Œì§€ì˜ ì •ìˆ˜ê°’ë§Œ
+		System.out.println("(int)(Math.random() *10): " + ((int)(Math.random() *10) + 1));
+		
+		/*
+		ìš°ë¦¬ëŠ” ë°±í™”ì  ê²½í’ˆ ì‹œìŠ¤í…œì„ ë§Œë“¤ë ¤ê³  í•œë‹¤
+		ê²½í’ˆ ì‹œìŠ¤í…œì€ ë‚˜ì˜¤ëŠ” ì ìˆ˜ì— ë”°ë¼ ê²½í’ˆì„ ì§€ê¸‰í•˜ëŠ” ì‹œìŠ¤í…œì´ë‹¤
+		
+		ê²½í’ˆ ì¶”ì²¨ì‹œ 1000 ì ìˆ˜ê°€ ë‚˜ì˜¤ë©´
+		ê²½í’ˆìœ¼ë¡œ TV , NoteBook , ëƒ‰ì¥ê³  , í•œìš°ì„¸íŠ¸ , íœ´ì§€
+		
+		ê²½í’ˆ ì¶”ì²¨ì‹œ 900 ì ìˆ˜ê°€ ë‚˜ì˜¤ë©´
+		ê²½í’ˆìœ¼ë¡œ  NoteBook , ëƒ‰ì¥ê³  , í•œìš°ì„¸íŠ¸ , íœ´ì§€
+		
+		ê²½í’ˆ ì¶”ì²¨ì‹œ 800 ì ìˆ˜ê°€ ë‚˜ì˜¤ë©´
+		ê²½í’ˆìœ¼ë¡œ  ëƒ‰ì¥ê³  , í•œìš°ì„¸íŠ¸ , íœ´ì§€
+		
+		ê²½í’ˆ ì¶”ì²¨ì‹œ 700 ì ìˆ˜ê°€ ë‚˜ì˜¤ë©´
+		ê²½í’ˆìœ¼ë¡œ  í•œìš°ì„¸íŠ¸ , íœ´ì§€
+		
+		ê²½í’ˆ ì¶”ì²¨ì‹œ 600 ì ìˆ˜ê°€ ë‚˜ì˜¤ë©´
+		ê²½í’ˆìœ¼ë¡œ  íœ´ì§€
+		
+		ê·¸ì™¸ ì ìˆ˜ëŠ” 100 ~ 500 ê¹Œì§€ëŠ” ì¹«ì†” 
+		
+		ê²½í’ˆì‹œìŠ¤í…œì˜ ì ìˆ˜ ë²”ìœ„ëŠ” 100 ~ 1000 ì ê¹Œì§€ í•œì •ë˜ì–´ ìˆë‹¤
+		ì‚¬ìš©ìê°€ ê²½í’ˆ ì‹œìŠ¤í…œì„ ì‚¬ìš©ì‹œ ëœë¤í•˜ê²Œ 100 ~ 1000ê¹Œì§€ì˜ ê°’ì´ ë‚˜ì˜¤ê²Œ ë˜ì–´ ìˆìŠµë‹ˆë‹¤.
+		
+		*/
+		  int jumsu = ((int)(Math.random()* 10) + 1)*100;
+		  System.out.println("ì¶”ì²¨ë²ˆí˜¸ : " + jumsu);
+		  String msg="";//ì´ˆê¸°í™”
+		  msg+= "ê³ ê°ë‹˜ì˜ ì ìˆ˜ëŠ” :" + jumsu + " ì´ê³  ìƒí’ˆì€ : ";
+		  switch(jumsu) {
+		  	case 1000:msg+="Tv ";
+		  	case 900:msg+="NoteBook ";
+		  	case 800:msg+="ëƒ‰ì¥ê³  ";
+		  	case 700:msg+="í•œìš° ";
+		  	case 600:msg+="íœ´ì§€ ";
+		  	     break;
+		  	default:msg+="ì¹«ì†”";     
+		  }
+		  System.out.println(msg);
 	}
 }

@@ -1,28 +1,49 @@
+/*
+instance variable  (class Car { String color; }
+local variable     (class Car { void move(){ int speed; } }
+static variable    (ê³µìœ ìì› , ê°ì²´ìƒì„±ì´ì „ì— memory ì˜¬ë¼ê°€ëŠ” ìì›)  
+*/
 
 class Variable {
 	int iv;
-
+	/*
+	 1. member field , instance variable  
+	 2. Variable v = new Variable();  heap ë©”ëª¨ë¦¬ì— iv ìƒì„± ....
+	    Variable v2 = new Variable(); heap ë©”ëª¨ë¦¬ì— iv ìƒì„± ....
+	 3. ëª©ì  : ì •ë³´ë¥¼ ë‹´ì„ ë ¤ê³  í•œë‹¤ (ì •ë³´ì— ë§ëŠ” Type ì •ë³´ë¥¼ ê°€ì ¸ì•¼ í•œë‹¤)
+	         - ì •ë³´(ì†ì„±) >> ê³ ìœ  , ìƒíƒœ , ë¶€í’ˆ(ì°¸ì¡°) 
+	         - ì •ë³´ëŠ” ê°ì²´ë§ˆë‹¤ ë‹¤ë¥¸ ê°’ì„ ê°€ì§ˆ ìˆ˜ ìˆë‹¤. 
+	         -ê·¸ëŸ¬ê¸° ë•Œë¬¸ì— êµ³ì´ ì´ˆê¸°í™” í•˜ì§€ ì•Šì•„ìš” (default ê°’ì„ ê°€ì§€ê³  ìˆì–´ìš”)
+	          int >> 0 , float >> 0.0 , boolean > false 
+	          String >> ì°¸ì¡°(í´ë˜ìŠ¤) >> null
+	 4. ìƒì„±ì‹œì  : new ë¼ëŠ” ì—°ì‚°ìë¥¼ í†µí•´ì„œ heap ê°ì²´ê°€ ë§Œë“¤ì–´ì§€ê³  ë‚˜ì„œ ë°”ë¡œ ë³€ìˆ˜ ìƒì„±         
+	                      
+	*/
+	
 	static int cv;
 	/*
-	 1. Class variable (Å¬·¡½º º¯¼ö), Static variable(°øÀ¯ º¯¼ö)
-	 2. ¸ñÀû : Á¤º¸¸¦ ´ã´Â°Í (»ı¼ºµÇ´Â ¸ğµç °´Ã¼°¡ °øÀ¯ÇÏ´Â ÀÚ¿ø) : °´Ã¼°£ °øÀ¯ ÀÚ¿ø
-	 	heap¿¡ »ı¼ºµÈ °´Ã¼µéÀÇ °øÅëÀÚ¿ø(°øÀ¯ÀÚ¿ø)	
- 	3. Æ¯Â¡ : Á¢±Ù ¹æ¹ı >> Class ¸í.staticº¯¼ö¸í (°´Ã¼°¡ ¸¸µé¾îÁöÁö ¾ÊÀº »óÈ²¿¡¼­µµ Á¢±ÙÀÌ °¡´É)
- 			ex) Math.Random 
-	4. »ı¼º½ÃÁ¡ : javac ÄÄÆÄÀÏ >> java ~(½ÇÇà) >> 
-					class loader¿¡ ÀÇÇØ¼­
-					1. Å¬·¡½º Á¤º¸(metadata)¸¦ ÀĞ¾î¼­ ±× ³»¿ªÀ» class area (static area) ¿Ã¸°´Ù.
-					static ÀÚ¿øÀ» ¸ÕÀú memory¿¡ ¿Ã¸°´Ù.
-					>> static ÀÚ¿øÀº °´Ã¼»ı¼º ÀÌÀü¿¡ memory ¿Ã¶ó°¡´Â ÀÚ¿ø
-					
+	1. class variable (í´ë˜ìŠ¤ ë³€ìˆ˜) , static variable(ê³µìœ ë³€ìˆ˜)
+	2. ëª©ì  : ì •ë³´ë¥¼ ë‹´ëŠ” ê²ƒ (ìƒì„±ë˜ëŠ” ëª¨ë“  ê°ì²´ê°€ ê³µìœ í•˜ëŠ” ìì›): [ê°ì²´ê°„] ê³µìœ ìì›
+	   heap ìƒì„±ëœ ê°ì²´ë“¤ì˜ ê³µí†µìì›(ê³µìœ ìì›)
+	3. íŠ¹ì§• : ì ‘ê·¼ë°©ë²• >> í´ë˜ìŠ¤ì´ë¦„.staticë³€ìˆ˜ëª… (ê°ì²´ê°€ ë§Œë“¤ì–´ì§€ì§€ ì•Šì€ ìƒí™©ì—ì„œ ì ‘ê·¼ ê°€ëŠ¥)..
+	        ex) Math.Random() >> Math m = new .. í•˜ì§€ ì•Šì•˜ì–´ìš”  
+	                ì ‘ê·¼ë°©ë²• >> ì°¸ì¡°ë³€ìˆ˜.staticë³€ìˆ˜ëª… 
+	                (Variable v = new Variable() >> v.cv)
+	                (Variable v2 = new Variable() >> v2.cv)  
+    4. ìƒì„±ì‹œì  : javac ì»´íŒŒì¼ >> java Variable (ì‹¤í–‰) >>	
+               class loader ì˜í•´ì„œ
+               1. í´ë˜ìŠ¤ ì •ë³´(metadata)ë¥¼ ì½ì–´ì„œ ê·¸ ë‚´ì—­ì„ class area (method area) ì˜¬ë ¤ìš”                
+	              static ìì›ì„ ë¨¼ì € memory ì˜¬ë ¤ìš”  
+	              >>static ìì›ì€ ê°ì²´ìƒì„± ì´ì „ì— memory ì˜¬ë¼ê°€ëŠ” ìì›
 	*/
 	
 	void method() {
 		int lv = 0;
 		/*
-		local variable (ÇÔ¼ö Áö¿ª º¯¼ö : ¹İµå½Ã ÃÊ±âÈ­)
-		»ı¸íÁÖ±â : ÇÔ¼ö ºí·° ³»
-		
+		  local variable (í•¨ìˆ˜ ì§€ì—­ë³€ìˆ˜ : ë°˜ë“œì‹œ ì´ˆê¸°í™”) 
+		   ìƒëª…ì£¼ê¸° : í•¨ìˆ˜ ì‹œì‘ ìƒì„± ~ í•¨ìˆ˜ ëë‚˜ë©´ ê°™ì´ ì†Œë©¸
+		  
+		   í•¨ìˆ˜ì•ˆì— if ë¸”ëŸ­ (ë¸”ëŸ­ë³€ìˆ˜)  , for ë¸”ëŸ­ (for (int i =0 ....)
 		*/
 	}
 }
@@ -32,8 +53,8 @@ public class Ex04_Variable_Scope {
 		Variable.cv = 100;
 		Variable variable = new Variable();
 		System.out.println(variable.cv);
-		
-		//°ËÁõ
-		System.out.println("variable.cv : "+variable.cv);
+
+		// ê²€ì¦
+		System.out.println("variable.cv : " + variable.cv);
 	}
 }

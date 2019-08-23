@@ -1,8 +1,9 @@
 /*
-ÀÌ¹Ì Ex01_main¿¡ ¼±¾ğµÇ¾î ÀÖ±â ¶§¹®¿¡ »ı¼º ºÒ°¡
-class Test {
-
-}*/
+ì•ˆë˜ìš” >> ì´ë¯¸ Ex01_main.java ì—ì„œ ì •ì˜ í–ˆê¸° ë•Œë¬¸ì— 
+class Test{
+	
+}
+*/
 
 public class Ex02_main {
 	public static void main(String[] args) {

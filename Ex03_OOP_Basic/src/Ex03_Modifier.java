@@ -1,37 +1,44 @@
 import kr.or.bit.Car;
 
 /*
-Á¢±ÙÀÚ(ÇÑÁ¤ÀÚ) : modifier
-public (°øÀ¯ : package ±¸ºĞ(Æú´õ) ±¸ºĞ¾øÀÌ ¸ğµç ÀÚ¿ø °øÀ¯)
-private (°³ÀÎ : Å¬·¡½º ³»ºÎ °øÀ¯ ÀÚ¿ø, °´Ã¼ ÀÔÀå¿¡¼­´Â Á¢±Ù ºÒ°¡(»ç¿ë ºÒ°¡))
+ì ‘ê·¼ì(í•œì •ì) :modifier
+public (ê³µìœ  : package êµ¬ë¶„(í´ë”) êµ¬ë¶„ì—†ì´ ëª¨ë“  ìì› ê³µìœ )
+private(ê°œì¸ : í´ë˜ìŠ¤ ë‚´ë¶€ ê³µìœ ìì› , ê°ì²´ ì…ì¥ì—ì„œëŠ” ì ‘ê·¼ ë¶ˆê°€(ì‚¬ìš©ë¶ˆê°€))
 
-°´Ã¼ÁöÇâ ¾ğ¾îÀÇ Æ¯Â¡
-1. Ä¸½¶È­(Àº´ĞÈ­)
-1.1 Å¬·¡½º ³»ºÎ¿¡ ÀÖ´Â ÀÚ¿ø(member field, method) Àû¿ë
-	private int number; // instance variable
-	private void call(){...} // ³»ºÎ(Å¬·¡½º)¿¡¼­¸¸ »ç¿ëÇÏ´Â °øÅëÀÚ¿ø
+ê°ì²´ì§€í–¥ì–¸ì–´ íŠ¹ì§•
+1. ìº¡ìŠí™”(ì€ë‹‰í™”)
+1.1 í´ë˜ìŠ¤ ë‚´ë¶€ì— ìˆëŠ” ìì›(member field , method) ì ìš© 
+    private int number; //instance variable
+    private void cal(){} // ë‚´ë¶€(í´ë˜ìŠ¤)ì—ì„œë§Œ ì‚¬ìš©í•˜ëŠ” ê³µí†µìì›
+1.2 ìº¡ìŠí™”ë¥¼ why ? , private why ì‚¬ìš©í• ê¹Œ ?
+       [ ì§ì ‘í• ë‹¹ì„ ë§‰ê³  ê°„ì ‘í• ë‹¹ì„ í†µí•´ì„œ ìì› ë³´í˜¸ ]
+       
+       [ì§ì ‘í• ë‹¹]
+       public class Car { public int door; } >> Car c = new Car(); c.door =1;
 
-1.2 Ä¸½¶È­ why? private why »ç¿ëÇÒ±î?
-	 >> Á÷Á¢ ÇÒ´çÀ» ¸·°í °£Á¢ ÇÒ´çÀ» ÅëÇØ ÀÚ¿øÀ» º¸È£ÇÑ´Ù.
-	[Á÷Á¢ÇÒ´ç]
-	public class Car{public int door;} >>  Car car = new Car(); car.door=10;
-	
-	[°£Á¢ÇÒ´ç] >> ÇÔ¼ö
-	public class Car{
-	private  int door; 
-	public void writeDoor(int data){
-	
-	 if(data>=0)
-	 	 door= data;
- 	 else
- 	 	door=0;
-	 }} >>  Car car = new Car(); car.writeDoor(10);
+       -1 ì•ˆë˜ìš” ??
+       [ê°„ì ‘í• ë‹¹ : ëˆ„êµ¬ë¥¼ í†µí•´ì„œ ì „ë‹¬í•˜ê³  ë°›ëŠ” í–‰ìœ„] >> ëˆ„êµ¬ >> í•¨ìˆ˜
+       public class Car { private int door; 
+                          public void writeDoor(int data){
+                          if(data >= 0) {door = data;} else{ door = 0;}}} 
+                          >> Car c = new Car(); c.writeDoor(-1);
+
+            ë¶ˆí¸í•´ìš”
+	  1. private int number; //read , write
+	          í•¨ìˆ˜ë¥¼ ë§Œë“¤ë©´ ë˜ìš”(ê²°êµ­ read í•¨ìˆ˜ 1ê°œ , write í•¨ìˆ˜ 1ê°œ) 
+	     >>public void writeNumber(int data) { number = data;} //ìº¡ìŠí™”ëœ ìì›ì— write
+	     >>public int readNumber(){return number;} //ìº¡ìŠí™”ëœ ìì›ì— read
+
+	  ê·¸ë˜ì„œ java ì—ì„œëŠ” íŠ¹ìˆ˜í•œ ëª©ì ì˜ í•¨ìˆ˜ë¥¼ ë§Œë“¤ì—ˆì–´ìš” (ìº¡ìŠí™”ëœ ìì›ì— ëŒ€í•´ì„œ read , write) ì „ìš©í•¨ìˆ˜ ..
+	 ì „ìš©í•¨ìˆ˜ë¥¼ setter í•¨ìˆ˜(write) , getter í•¨ìˆ˜ (read)
 	 
+	 private int age;
+	 -setter , getter ëª¨ë‘ ìƒì„±
+	 -setter ë§Œ ìƒì„±
+	 -getter ë§Œ ìƒì„±
 	 
-	 private int number;
-	 >> ±×·¡¼­ ÀÚ¹Ù¿¡¼­´Â Æ¯¼öÇÑ ¸ñÀûÀÇ ÇÔ¼ö¸¦ ¸¸µé¾ú´Ù. (Ä¸½¶È­µÈ ÀÚ¿ø¿¡ ´ëÇØ¼­ read, write ÇÒ ¼ö ÀÖµè Àü¿ë ÇÔ¼ö)
-	 setter ÇÔ¼ö, getter ÇÔ¼ö
 */
+
 public class Ex03_Modifier {
 
 	public static void main(String[] args) {

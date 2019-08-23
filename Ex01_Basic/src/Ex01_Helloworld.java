@@ -5,17 +5,17 @@ public class Ex01_Helloworld{
 		 System.out.println("Hello world"); kr.or.bit.Emp emp = new
 		  kr.or.bit.Emp();
 		 */
-		Emp emp = new Emp(); // »ç¿ø ÇÑ¸íÀ» »ý¼ºÇÕ´Ï´Ù.
+		Emp emp = new Emp(); 
 		emp.empno = 7777;
-		emp.ename = "È«±æµ¿";
+		emp.ename = "È«ï¿½æµ¿";
 		emp.job = "IT";
 		
 		String str = emp.getEmpInfo();
 		System.out.println(str);
 		
-		Emp emp2 = new Emp(); // »ç¿ø ÇÑ¸íÀ» »ý¼ºÇÕ´Ï´Ù.
+		Emp emp2 = new Emp();
 		emp2.empno = 8888;
-		emp2.ename = "¾Æ¹«°³";
+		emp2.ename = "ï¿½Æ¹ï¿½ï¿½ï¿½";
 		emp2.job = "sales";
 		
 		String str2 = emp2.getEmpInfo();

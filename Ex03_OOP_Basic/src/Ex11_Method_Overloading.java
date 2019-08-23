@@ -1,21 +1,26 @@
 /*
-°´Ã¼ÁöÇâ¾ğ¾î
-1. »ó¼Ó(Àç»ç¿ë)
-2. Ä¸½¶È­ (private) -> ÇÔ¼ö(read, write) : °£Á¢ÇÒ´ç(ÀÚ¿øº¸È£) -> Ä¸½¶È­µÈ member field¿¡ ´ëÇØ¼­ read(get), write(set) Àü¿ë ÇÔ¼ö -> setter, getter -> ÀÚµ¿»ı¼ºÀÌ¿ëÇÑ´Ù.
-3. ´ÙÇü¼º 
+ê°ì²´ì§€í–¥ì–¸ì–´
+1. ìƒì† (ì¬ì‚¬ìš©ì„±)
+2. ìº¡ìŠí™” (private) -> í•¨ìˆ˜ (read , write): ê°„ì ‘í• ë‹¹(ìì›ë³´í˜¸)  -> ìº¡ìŠí™”ëœ   member field
+   read(get) , write(set) ì „ìš©í•¨ìˆ˜  -> setter , getter -> ì•½ì†   getEmpno, setEmpno
+3. ë‹¤í˜•ì„± 
 
-[´ÙÇü¼º ÇÑ ºÎºĞ...]
+[ë‹¤í˜•ì„± í•˜ëŠ” ë…€ì„ í•œ ë¶€ë¶„ ....]
 
-[Method overloading]
-ÇÏ³ªÀÇ ÀÌ¸§À¸·Î ¿©·¯°¡Áö ±â´ÉÀ» ÇÏ´Â ÇÔ¼ö
-ex) System.out.println()
-Æ¯Â¡ : overloadingÀº ¼º´É Çâ»ó¿¡ µµ¿òÀ» ÁÖÁö ¾Ê´Â´Ù.
-		why> ÆíÇÏ°Ô »ç¿ëÇÏ·Á°í... >> °³¹ßÀÚ
-		¼³°èµµ¸¦ »ı°¢ÇÏ¸é >> ÇÔ¼öÀÇ È°¿ëÀÌ ¸¹Àº °æ¿ì (´Ù¾çÇÑ parameterÀ» »ç¿ëÇÏ´Â °æ¿ì)
-¹®¹ı : ÇÔ¼öÀ¸ ÀÌ¸§Àº °°°í parameterÀÇ °³¼ö¿À ¤¿Å¸ÀÔÀ» ´Ş¸®ÇÏ´Â ¹æ¹ı
-1, ÇÔ¼öÀÇ ÀÌ¸§Àº °°¾Æ¾ßÇÑ´Ù.
-2. [parameter] °³¼ö ¶Ç´Â [Type]Àº ´Ş¶ó¾ßÇÑ´Ù.
-3. return typeÀº »ó°ü¾ø´Ù.
+[method overloading ]
+í•˜ë‚˜ì˜ ì´ë¦„ìœ¼ë¡œ ì—¬ëŸ¬ê°€ì§€ ê¸°ëŠ¥ì„ í•˜ëŠ” í•¨ìˆ˜ 
+ì‚¬ìš©: System.out.println()
+íŠ¹ì§•: ì˜¤ë²„ë¡œë”©ì€ ì„±ëŠ¥ í–¥ìƒì— ë„ì›€ì„ ì¤€ë‹¤(x)
+     why> í¸í•˜ê²Œ ì‚¬ìš©í• ë ¤ê³     >> ê°œë°œì
+          ê³ ë¯¼(ì„¤ê³„ë„ ì–´ë–¤ ì ì„ ìƒê°í•˜ë©´) >> í•¨ìˆ˜ì˜ í™œìš©ì´ ë§ì€ ê²½ìš° ( ë‹¤ì–‘í•œ  parameter  ì‚¬ìš©)
+     ^^ static í•¨ìˆ˜  why ....
+
+ë¬¸ë²•: í•¨ìˆ˜ì˜ ì´ë¦„ì€ ê°™ê³    parameter ì˜ [ê°œìˆ˜]ì™€ [íƒ€ì¼]ì„ ë‹¬ë¦¬í•˜ëŠ” ë°©ë²•
+1.í•¨ìˆ˜ì˜ ì´ë¦„ì€ ê°™ì•„ì•¼ í•œë‹¤
+2.[parameter] ê°œìˆ˜ ë˜ëŠ” [Type] ì€ ë‹¬ë¼ì•¼ í•œë‹¤
+3.return type overloading íŒë‹¨ê¸°ì¤€( x )
+4. parameter ìˆœì„œê°€ ë‹¤ë¦„ì„ ì¸ì •í•œë‹¤          
+
 */
 
 class Human {
@@ -24,11 +29,10 @@ class Human {
 }
 
 class OverTest {
-	void add(Human h) { // °³¼ö´Â °°Áö¸¸ parameter typeÀÌ Æ²¸®´Ù -> add overloading
-						// Human °´Ã¼ÀÇ ÁÖ¼Ò°ª
-		h.name = "È«±æµ¿";
+	void add(Human h) { //ê°œìˆ˜ëŠ” ê°™ì§€ë§Œ Type í‹€ë¦¬ë©´ ì¸ì •
+		h.name = "È«ï¿½æµ¿";
 		h.age = 100;
-		System.out.println("parameter h ÁÖ¼Ò°ª :" + h);
+		System.out.println("parameter h ï¿½Ö¼Ò°ï¿½ :" + h);
 	}
 
 	int add(int i) {
@@ -46,7 +50,7 @@ public class Ex11_Method_Overloading {
 		System.out.println(ot.add(100));
 		System.out.println(ot.add("100"));
 		Human m = new Human();
-		System.out.println("m ÁÖ¼Ò°ª :" + m);
+		System.out.println("m ï¿½Ö¼Ò°ï¿½ :" + m);
 		ot.add(m);
 		System.out.println(m);
 	}

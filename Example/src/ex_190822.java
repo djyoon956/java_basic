@@ -3,17 +3,17 @@ public class ex_190822 {
 	public static void main(String[] args) {
 
 		if (Clothes.getCapital() >= 10000) {
-			Clothes clothes1 = new Clothes("³ªÀÌÅ°", "¹ÙÁö", 9000);
+			Clothes clothes1 = new Clothes("ì•„ë””ë‹¤ìŠ¤", "ë°”ì§€", 9000);
 			clothes1.printClothesInfo();
 
 			clothes1.sales();
 
-			System.out.printf("ÃÑ ÆÇ¸Å °¹¼ö : %d\n", Clothes.getSoldcount());
-			System.out.printf("ÃÑ ÆÇ¸Å ±İ¾× : %d\n", Clothes.getTotalsales());
-			System.out.printf("º¸À¯ÁßÀÎ ¿Ê °¹¼ö : %d\n", Clothes.getPossessioncount());
-			System.out.printf("º¸À¯ ÀÚ»ê : %s\n", Clothes.getCapital());
+			System.out.printf("íŒë§¤ ê°¯ìˆ˜ : %d\n", Clothes.getSoldcount());
+			System.out.printf("íŒë§¤ ì´ ì•¡ : %d\n", Clothes.getTotalsales());
+			System.out.printf("ë³´ìœ  ê°¯ìˆ˜ : %d\n", Clothes.getPossessioncount());
+			System.out.printf("í˜„ì¬ ìì‚° : %s\n", Clothes.getCapital());
 
 		} else
-			System.out.println("ÀÚ»êÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+			System.out.println("íŒŒì‚°.");
 	}
 }

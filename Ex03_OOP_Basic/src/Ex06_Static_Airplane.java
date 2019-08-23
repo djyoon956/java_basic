@@ -6,18 +6,11 @@ class InitTest {
 
 	int iv = 1;
 
-	static { // static ÃÊ±âÀÚ : static º¯¼ö ÃÊ±âÈ­
-				// cv¸¦ method ¿µ¿ª¿¡ ¿Ã¸° ÈÄ
-				// stack¿µ¿ª¿¡¼­ static{} ½ÇÇà
-				// - º¯°æÁ¡
-				// >> cv=0 => main ¿µ¿ª ÁøÀÔ½Ã ÃÊ±â°ª
-				// >> cv=1 => ÇÒ´ç½Ã
-				// >> cv=2 => static ÃÊ±âÈ­ ÁøÀÔ½Ã º¯°æ
+	static {
 		cv = 2;
 	}
 
-	{ // instance ÃÊ±âÀÚ : instance ÃÊ±âÈ­
-		// new InitTest()°¡ ½ÇÇàµÇ´Â ½ÃÁ¡¿¡ ½ÇÇàµÈ´Ù.
+	{
 		iv = 2;
 	}
 }
@@ -30,24 +23,24 @@ public class Ex06_Static_Airplane {
 //		System.out.println(initTest.cv);
 //
 //		Airplane airplane1 = new Airplane();
-//		airplane1.setAirplane("ºñÇà±â", 1);
+//		airplane1.setAirplane("ï¿½ï¿½ï¿½ï¿½ï¿½", 1);
 //		airplane1.printAirplaneInfo();
 //
 //		Airplane airplane2 = new Airplane();
-//		airplane2.setAirplane("ºñÇà±â", 2);
+//		airplane2.setAirplane("ï¿½ï¿½ï¿½ï¿½ï¿½", 2);
 //		airplane2.printAirplaneInfo();
 //
 //		Airplane airplane3 = new Airplane();
-//		airplane3.setAirplane("ºñÇà±â", 3);
+//		airplane3.setAirplane("ï¿½ï¿½ï¿½ï¿½ï¿½", 3);
 //		airplane3.printAirplaneInfo();
 //
-//		System.out.printf("´©Àû ´ë¼ö : %d\n", airplane1.getTotalAirplaneCount());
+//		System.out.printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : %d\n", airplane1.getTotalAirplaneCount());
 //
-//		Airplane airplane1 = new Airplane("ºñÇà±â", 1);
+//		Airplane airplane1 = new Airplane("ï¿½ï¿½ï¿½ï¿½ï¿½", 1);
 //		airplane1.printAirplaneInfo();
-//		Airplane airplane2 = new Airplane("ºñÇà±â", 2);
+//		Airplane airplane2 = new Airplane("ï¿½ï¿½ï¿½ï¿½ï¿½", 2);
 //		airplane2.printAirplaneInfo();
-//		Airplane airplane3 = new Airplane("ºñÇà±â", 3);
+//		Airplane airplane3 = new Airplane("ï¿½ï¿½ï¿½ï¿½ï¿½", 3);
 //		airplane3.printAirplaneInfo();
 //		airplane1.getTotalAirplaneCount();
 

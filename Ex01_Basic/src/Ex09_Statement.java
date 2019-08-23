@@ -2,107 +2,126 @@ import java.util.Scanner;
 
 public class Ex09_Statement {
 	public static void main(String[] args) {
-//		System.out.println("ÀÔ·Â");
-//		Scanner sc = new Scanner(System.in);
-//
-//		if (sc.hasNextInt()) { // ÀÇ¹®Çü ÇÔ¼ö >> true,false
-//			System.out.println("Á¤¼ö°ª");
-//		} else {
-//			System.out.println("´Ù¸¥°ª");
-		// }
-		// sc.hasNextLine() ¹®ÀÚ¿­ µ¥ÀÌÅÍ °ËÁõ
-
-		// Á¦¾î¹® (*¾Ï±â*)
-		// Á¶°Ç¹® (if 3°¡Áö) (switch( ){case..break})
-
-		// ¹İº¹¹® for (¹İº¹ È¹¼ö ¸íÈ®), while(true,false), do-while()
-		// ºĞ±â¹® break(ºí·° Å»Ãâ), continue(´ÙÀ½ ´Ü°è·Î ÁøÃâ, ¾Æ·¡ ±¸ºĞ skip)
-
-		int count = 0;
-		if (count < 1) {
-			System.out.println("TrueÀÔ´Ï´Ù.");
+		System.out.println("ì…ë ¥");
+		Scanner sc = new Scanner(System.in);
+		//ctrl + Shift + O  (import ìë™ ìƒì„±í•˜ê¸°)
+		/*
+		if(sc.hasNextInt()) {  //ì˜ë¬¸í˜• í•¨ìˆ˜ >> true, false
+			System.out.println("ì •ìˆ˜ê°’ì´ì•¼");
+		}else {
+			System.out.println("ë‹¤ë¥¸ê°’ì¸ë°");
 		}
-
-		// java ; : ¹®ÀåÀÇ ³¡(ÇØ¼®ÀÇ ´ÜÀ§)
-		if (count < 10)
+		*/
+		//sc.hasNextLine() //ë„ˆ ë¬¸ìì—´ ë°ì´í„°ì•¼ >> true , false
+		
+		//ì œì–´ë¬¸ (ì•”ê¸°í•˜ì)
+		//ì¡°ê±´ë¬¸ (if 3ê°€ì§€) (switch(){case  .. break})
+		//ë°˜ë³µë¬¸ for(ë°˜ë³µíšŸìˆ˜ ëª…í™•) , while(true,false) , do~while()
+		//ë¶„ê¸°ë¬¸ break(ë¸”ëŸ­ íƒˆì¶œ) , continue(ì•„ë˜ êµ¬ë¬¸ skip)
+		
+		int count=0;
+		if(count < 1) {
+			System.out.println("True ì…ë‹ˆë‹¤");
+		}
+		
+		//ì‹¤í–‰ë¸”ëŸ­ ìƒëµ ê°€ëŠ¥
+		//ìë°” ; ì„¸ë¯¸ì½œë¡  ë¬¸ì¥ì˜ ë (í•´ì„ì˜ ë‹¨ìœ„)
+		if(count < 10)
 			System.out.println("{True}");
-
-		char data = 'A';
-		switch (data) { // switch(ÀÎ¼ö,ÀÎÀÚ) -> ¼ıÀÚ(Á¤¼ö) , char, String °¡´É
-		case 'A':
-			System.out.println("¹®ÀÚ ºñ±³");
-			break; // Å»ÃâÀÇ ¹üÀ§(switch ºí·°)
-
-		default:
-			System.out.println("else ¸ğµç °Í");
+		
+		char data ='A';
+		switch(data) { //switch(ì¸ìê°’) ìˆ«ì(ì •ìˆ˜) ,char , String ê°€ëŠ¥
+			case 'A' : System.out.println("ë¬¸ìë¹„êµ");
+				break; //íƒˆì¶œì˜ ë²”ìœ„ (switch ë¸”ëŸ­)
+			default : System.out.println("else ëª¨ë“  ê²ƒ");
 		}
-
-		int sum = 0;
-		for (int i = 1; i <= 10; i++) {
-			sum += i;
+		
+		//ë°˜ë³µë¬¸
+		int sum=0;
+		for(int i =1; i <= 10 ;i++) {
+			//System.out.println(i);
+			//ëˆ„ì ê°’
+			sum+=i;//sum = sum + i;
 		}
-		System.out.println("sum : " + sum);
-
-		// Quiz
-		// for¹®À» »ç¿ëÇØ¼­ 1~10±îÁöÀÇ È¦¼öÀÇ ÇÕÀ» ±¸ÇØº¸¼¼¿ä
-		// ´Ü, for¹® ÇÏ³ª¸¸ »ç¿ë
-		int sum2 = 0;
-		for (int i = 1; i < 10; i += 2) {
-			// System.out.println(i);
-			sum2 += i;
+		System.out.println("sum 1~10 : " + sum);
+		
+		//forë¬¸ì„ ì‚¬ìš©í•´ì„œ 1~10ê¹Œì§€ì˜ í™€ìˆ˜ì˜ í•©ì„ êµ¬í•´ë³´ì„¸ìš”
+		//ë‹¨ for ë¬¸ í•˜ë‚˜ë§Œ ê°€ì§€ê³  í•´ê²°í•˜ì„¸ìš” (for ë¬¸ì— ifë¬¸ ì“°ì§€ ë§ˆì„¸ìš”)
+		int sum2=0;
+		for(int i =1; i <= 10 ;i+=2) { //i = i + 10
+			//System.out.println(i);
+			sum2+=i; //í™€ìˆ˜ì˜ í•©
 		}
-		System.out.println("1~10±îÁöÀÇ È¦¼öÀÇ ÇÕ : " + sum2);
-
-		// Quiz
-		// 1~100±îÁöÀÇ Â¦¼öÀÇ ÇÕ
-		// if¹® »ç¿ë
+		System.out.println("1~10 ê¹Œì§€ì˜ í™€ìˆ˜ì˜ í•© : " + sum2);
+		
+		//1~100ê¹Œì§€ì˜ í•©
+		//ì§ìˆ˜ì˜ í•©ì„ êµ¬í•˜ì„¸ìš” (if ë¬¸ ì‚¬ìš©)
 		int sum3 = 0;
-		for (int i = 1; i <= 100; i++) {
-			if (i % 2 == 0)
-				sum3 += i;
+		for(int i =1 ; i <= 100 ; i++) {
+			if(i % 2 == 0) {
+				sum3+=i; //sum3 = sum3 + i
+			}
 		}
-		System.out.println("1~10±îÁöÀÇ È¦¼öÀÇ ÇÕ : " + sum3);
-
-		// Quiz
-		// ÀÔ»ç ½ÃÇè (ÇÊ¼ö)
-		// ±¸±¸´Ü(ÀÌÁß for¹®)
-		for (int i = 2; i < 10; i++) {
-			for (int j = 1; j < 10; j++) {
-				System.out.printf("[%d] * [%d] = [%d]\t", i, j, i * j);
+		System.out.println("1~100ê¹Œì§€ ì§ìˆ˜ì˜ í•© : " + sum3);
+		
+		//ì…ì‚¬ì‹œí—˜ (í•„ìˆ˜)
+		//êµ¬êµ¬ë‹¨ (ì¤‘ì²© forë¬¸ ì‚¬ìš©í•˜ê¸°)
+		//2~9
+		//2 > 1~9  >> ì—°ì‚°
+		for(int i = 2 ; i <= 9 ; i++) {
+			for(int j = 1 ; j <= 9 ; j++) {
+				//System.out.println("i : " + i + "-" + "j : " + j);
+				System.out.printf("[%d]*[%d]=[%d]\t",i,j,i*j);
 			}
 			System.out.println();
 		}
-
+		
 		System.out.println();
-
-		// Point : break Å»Ãâ, continue ½ºÅµ
-		for (int i = 2; i < 10; i++) {
-			for (int j = 1; j < 10; j++) {
-				if (i == j) {
-					break;
+		//key point : break íƒˆì¶œ , continue ìŠ¤í‚µ
+		for(int i = 2 ; i <= 9 ; i++) {
+			for(int j = 1 ; j <= 9 ; j++) {
+				if(i == j) {
+					break; //ì•ˆìª½ forë¬¸ íƒˆì¶œ
 				}
-				// System.out.printf("[%d] * [%d] = [%d]\t", i, j, i * j);
-				System.out.printf("%s", "*");
+				//System.out.printf("[%d]*[%d]=[%d]\t",i,j,i*j);
+				System.out.printf("%s","*");
+			}
+			System.out.println();
+		}
+		
+		System.out.println();
+		
+		for(int i = 2 ; i <= 9 ; i++) {
+			for(int j = 1 ; j <= 9 ; j++) {
+				if(i == j)continue; 
+				//if(i == j){ continue; }
+				
+				System.out.printf("[%d]*[%d]=[%d]\t",i,j,i*j);
+				//System.out.printf("%s","*");
 			}
 			System.out.println();
 		}
 
 		System.out.println();
 
-		// Point : break Å»Ãâ, continue ½ºÅµ
-		for (int i = 2; i < 10; i++) {
-			for (int j = 1; j < 10; j++) {
-				if (i == j)
-					continue;
-				System.out.printf("[%d] * [%d] = [%d]\t", i, j, i * j);
-				// System.out.printf("%s","*");
+		for (int i = 2; i <= 9; i++) {
+			for (int j = 1; j < i; j++) { // j <= 9
+				System.out.print("*");
 			}
 			System.out.println();
 		}
 
-		for (int i = 100; i >= 0; i--) {
+		for (int i = 100; i >= 0; i--) { // ì—°ìŠµ
 			System.out.println(i);
+		}
 
+		System.out.println("í”¼ë³´ë‚˜ì¹˜ ìˆ˜ì—´");
+		int a = 0, b = 1, c = 0;
+		for (int i = 0; i < 10; i++) {
+			a = b;
+			b = c;
+			c = a + b;
+			System.out.println(" " + c);
 		}
 	}
 }

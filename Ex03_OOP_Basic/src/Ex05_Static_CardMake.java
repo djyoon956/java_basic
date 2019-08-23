@@ -3,7 +3,7 @@
 public class Ex05_Static_CardMake {
 	public static void main(String[] args) {
 
-		/* ÃÊ±â ¿ä±¸»çÇ×
+		/* ì´ˆê¸° ìš”êµ¬ì‚¬í•­
 		Card c = new Card();
 		c.number = 1;
 		c.kind = "heart";
@@ -15,9 +15,9 @@ public class Ex05_Static_CardMake {
 		c2.cardInfor();
 		*/
 		
-		// ...53Àå »ý¼º...
+		// ...53ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½...
 		
-		// °í°´ : Ä«µå Å©±â º¯°æ ¿äÃ»
+		// 
 //		Card.h=70;
 //		Card.w=50;
 //		Card c = new Card();
@@ -31,7 +31,5 @@ public class Ex05_Static_CardMake {
 //		c2.number = 2;
 //		c2.kind = "heart";
 //		c2.cardInfor();
-		
-		// ´ç½ÅÀº 53¹øÀÇ ¼öÁ¤À» ÇÏ½Ã°Ú½À´Ï±î?
 	}
 }

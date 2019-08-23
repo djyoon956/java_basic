@@ -1,48 +1,53 @@
 import kr.or.bit.common.CommonClass;
 
 /*
-Å¬·¡½º == ¼³°èµµ == Å¸ÀÔ
+í´ë˜ìŠ¤ == ì„¤ê³„ë„ == íƒ€ì…
 
-Å¬·¡½ºÀÇ ±¸¼º ¿ä¼Ò : ÇÊµå + »ı¼ºÀÚ + ÇÔ¼ö
-- ÇÊµå >> °íÀ¯ Á¤º¸, »óÅÂ Á¤º¸, ÂüÁ¶ Á¤º¸
-- »ı¼ºÀÚ >> ÇÊµåÀÇ ÃÊ±âÈ­¸¦ ¸ñÀûÀ¸·ÎÇÏ´Â ÇÔ¼ö
-- ÇÔ¼ö >> ±â´É
+í´ë˜ìŠ¤ì˜ êµ¬ì„±ìš”ì†Œ : í•„ë“œ + ìƒì„±ì + í•¨ìˆ˜
+*í•„ë“œ >> ê³ ìœ ì •ë³´ , ìƒíƒœì •ë³´ , ì°¸ì¡°ì •ë³´ 
+*ìƒì„±ì >> í•„ë“œì˜ ì´ˆê¸°í™”ë¥¼ ëª©ì ìœ¼ë¡œí•˜ëŠ” í•¨ìˆ˜
+*í•¨ìˆ˜ >> ê¸°ëŠ¥
 
-Å¬·¡½º, ÇÊµå, »ı¼ºÀÚ, ÇÔ¼ö :  ¹üÀ§ Á¤ÀÇÇÏ±â À§ÇØ¼­ (Á¢±ÙÀÚ, ÇÑÁ¤ÀÚ)
->> public, private, default, protected(»ó¼Ó)
-1. public class Test{...}  
-2. class Test{...} >> ³»ºÎÀûÀ¸·Î ÄÄÆÄÀÏ·¯°¡ default Á¢±ÙÀÚ·Î ÇØ¼®
-	- default class Test{...} >> default »ı·«°¡´É ÇÏ¹Ç·Î »ı·«ÇÑ´Ù.
-	- default Á¢±ÙÀÚ : °°Àº Æú´õ ¾È¿¡¼­´Â Á¢±ÙÀÌ °¡´É, ´Ù¸¥ Æú´õ¸é Á¢±Ù ºÒ°¡ÇÏ´Ù.
-	
-ex) ½Ç½À
-1. kr.or.bit.common.CommonClass
-	CommonClass >> public class 
-	Ex01_main°ú CommonClass  ´Ù¸¥ ÆĞÅ°Áö ÀÌ´Ù.
-	Ex01_main >> CommonClass Á¢±Ù°¡´ÉÇÑ°¡? >>YES
-	why? ) public Á¢±ÙÀÚ´Â ¾îµğ¼­µç Á¢±Ù°¡´ÉÇÏ´Ù.
-	
-2. kr.or.bit.common.DcommonClass
-	Ex01_main >> DcommonClass Á¢±Ù°¡´ÉÇÑ°¡? >>NO
-	why? ) default Á¢±Ù ºÒ°¡. °°Àº ÆĞÅ°Áö ¾È¿¡¼­´Â Á¢±Ù °¡´É, ´Ù¸¥ ÆĞÅ°Áö¸é Á¢±Ù ºÒ°¡
-	>> default class »ç¿ë >> °°Àº Æú´õ(package)³»¿¡¼­ ¿¬½À ¸ñÀûÀ¸·Î »ç¿ë
-	
-3. ÇÏ³ªÀÇ ¹°¸®ÀûÀÎ ÀÚ¹ÙÆÄÀÏÀº ¿©·¯°³ÀÇ Å¬·¡½º¸¦ °¡Áú ¼ö ÀÖ´Ù.
-	´Ü publicÀº ÇÏ³ªÀÇ class¸¸ °®´Â´Ù(³ª¸ÓÁö´Â default..)
+í´ë˜ìŠ¤ , í•„ë“œ , ìƒì„±ì , í•¨ìˆ˜ : ë²”ìœ„ ì •ì˜í•˜ê¸° ìœ„í•´ì„œ (ì ‘ê·¼ì, í•œì •ì , ìˆ˜ì •ì)
+>> public , private , default , protected (ìƒì†ì—ì„œ)
+
+1. public class Test {}
+
+2. class Test{} >> ì»´íŒŒì¼ëŸ¬ê°€  ë‚´ë¶€ì ìœ¼ë¡œ default ì ‘ê·¼ìë¥¼ ë¶™ì¸ë‹¤
+   >>>>> default class Test {}
+   >>default ì“°ì§€ ì•ŠëŠ”ë‹¤ .....
+   >>default ì ‘ê·¼ìëŠ” : ê°™ì€ í´ë” ì•ˆì—ì„œëŠ” ì ‘ê·¼ ê°€ëŠ¥ , ë‹¤ë¥¸ í´ë˜ì— ìˆìœ¼ë©´ ì„œë²„ ì ‘ê·¼ ë¶ˆê°€ 
+   >>default class ì–¸ì œ ì‚¬ìš©í•˜ëŠ” ê±°ì§€ : ê°™ì€ í´ë”(package)ë‚´ì—ì„œ ì—°ìŠµëª©ì ìœ¼ë¡œ ....
+  
+3. í•˜ë‚˜ì˜ ë¬¼ë¦¬ì ì¸ ìë°”íŒŒì¼ì€ ì—¬ëŸ¬ê°œì˜ í´ë˜ìŠ¤ë¥¼ ê°€ì§ˆ ìˆ˜ ìˆë‹¤    (0)
+      ë‹¨ public ì€ í•˜ë‚˜ì˜ class ë§Œ ê°–ëŠ”ë‹¤ (ë‚˜ë¨¸ì§€ default ...) 
+   
+   
+ex) ì‹¤ìŠµ
+1. kr.or.bit.common í´ë” 
+   CommonClass >> public class >>
+   Ex01_main ê³¼ CommonClass ë‹¤ë¥¸ í´ë”ì— ìˆë‹¤
+   Ex01_main í´ë˜ìŠ¤ì—ì„œ >> CommonClass ìì› ì ‘ê·¼ ê°€ëŠ¥
+   why? public ì ‘ê·¼ì ì–´ë””ì—ì„œë‚˜ ì‚¬ìš©ê°€ëŠ¥
+
+2. kr.or.bit.common í´ë”
+   Ex01_main í´ë˜ìŠ¤ì—ì„œ >> DcommonClass ìì› ì ‘ê·¼ ê°€ëŠ¥
+   why? default ì ‘ê·¼ë¶ˆê°€
 */
 
-class Test { // default Á¢±ÙÀÚ (°°Àº Æú´õ ¾È¿¡¼­¸¸...)
-	int d_iv; // default Á¢±ÙÀÚ
-	public int p_iv; // ÀüÃ¼ Á¢±Ù°¡´É
-	private int pri_iv; // °³ÀÎÀûÀÎ....Ä¸½¶È­ ±¸Çö
+class Test { // default ì ‘ê·¼ì (ê°™ì€ í´ë” ì•ˆì—ì„œë§Œ)
+	int d_iv; // ì»´íŒŒì¼ëŸ¬ê°€ ì•Œì•„ì„œ default int d_iv í•´ì„í•©ë‹ˆë‹¤
+	public int p_iv; // ëˆ„êµ¬ë‚˜ ì–´ë””ì„œë‚˜ ì‚¬ìš©ê°€ëŠ¥
+	private int pri_iv; // ê°œì¸ì ì¸ ... ìº¡ìŠí™”êµ¬í˜„ ....
 }
 
 public class Ex01_main {
 	public static void main(String[] args) {
 		CommonClass commonClass = new CommonClass();
-		commonClass.p_iv = 100; // public Á¢±ÙÀÚ¿©¼­ Á¢±Ù °¡´É
-		Test test = new Test();
-		test.d_iv = 100; // °°Àº Æú´õÀÌ±â ¶§¹®¿¡ default Á¢±ÙÀÚ¿¡ Á¢±Ù °¡´É
-		test.p_iv = 100; // publicÀº ÆĞÅ°Áö¿Í »ó°ü¾øÀÌ Á¢±Ù°¡´É
+		commonClass.p_iv = 100; // why ? public int p_iv
+		Test tt = new Test();
+		tt.d_iv = 200; // ê°™ì€ í´ë” (default ì ‘ê·¼ì ì ‘ê·¼ ê°€ëŠ¥)
+		tt.p_iv = 300; // public ì€ í´ë”ì™€ ìƒê´€ì—†ì´ ì ‘ê·¼ ê°€ëŠ¥
+		// tt.pri_iv ì ‘ê·¼ë¶ˆê°€
 	}
 }

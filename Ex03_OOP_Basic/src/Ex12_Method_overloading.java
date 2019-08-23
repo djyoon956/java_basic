@@ -4,8 +4,8 @@ class Human2 {
 }
 
 class Test {
-	Human2 add(Human2 h) { // ÁÖ¼Ò°ªÀ» ¹Þ¾Æ¼­ ÁÖ¼Ò°ªÀ» ¸®ÅÏÇÑ´Ù.
-		h.name = "È«±æµ¿";
+	Human2 add(Human2 h) {// ì£¼ì†Œê°’ì„ ë°›ì•„ì„œ ì£¼ì†Œê°’ì„ ë¦¬í„´í•œë‹¤
+		h.name = "È«ï¿½æµ¿";
 		h.age = 200;
 		return h;
 	}
@@ -24,17 +24,16 @@ public class Ex12_Method_overloading {
 		Human2 man = new Human2();
 		Human2 man2 = t.add(man);
 
-		System.out.println("main ÂüÁ¶ º¯¼ö == man2 ÂüÁ¶ º¯¼ö : " + man.equals(man2));
+		System.out.println("man(ì£¼ì†Œê°’)ì°¸ì¡°ë³€ìˆ˜ == man2 (ì£¼ì†Œê°’)ì°¸ì¡°ë³€ìˆ˜ : " + man.equals(man2));
 		System.out.println(man2.name + "/" + man2.age);
 
 		System.out.println("-------------------------------");
 		Human2 m = new Human2();
 		m.age = 20;
-		m.name = "¾Æ¹«°³";
+		m.name = "ì•„ë¬´ê°œ";
 		Human2 m2 = new Human2();
 		Human2 m3 = t.add(m, m2);
 
-		System.out.println(m3.name + "/" + m3.age);// => ´ä) ¾Æ¹«°³/20
-
+		System.out.println(m3.name + "/" + m3.age);
 	}
 }

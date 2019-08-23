@@ -1,23 +1,26 @@
 /*
-»ı¼ºÀÚ ÇÔ¼ö (Constructor)
-1. Æ¯¼öÇÑ ¸ñÀûÀÇ ÇÔ¼ö 
->> member field ÃÊ±âÈ­
+ìƒì„±ì í•¨ìˆ˜(constructor)
+1. í•¨ìˆ˜ (íŠ¹ìˆ˜í•œ ëª©ì ì˜ í•¨ìˆ˜)
+2. íŠ¹ìˆ˜í•œ ëª©ì ( member field ì´ˆê¸°í™”)
 
-2. ÀÏ¹İÇÔ¼ö¿Í ´Ù¸¥Á¡
-2.1. class ¸í°ú µ¿ÀÏ
-2.2. return typeÀÌ ¾ø´Ù 
->> ½ÇÇà½ÃÁ¡ ¶§¹®¿¡
->> °´Ã¼ »ı¼º½Ã È£Ãâ (new Class())
+Tip) static  >> static {} ,  ì¼ë°˜ë³€ìˆ˜  >>  {}
 
-3. ¸ñÀû : »ı¼ºµÈ °´Ã¼¸¶´Ù ´Ù¸¥ ÃÊ±â°ª ºÎ¿©ÇÏ±â
+3. ì¼ë°˜í•¨ìˆ˜ì™€ ë‹¤ë¥¸ì 
+3.1  í•¨ìˆ˜ì˜ ì´ë¦„ ê³ ì • (class ì´ë¦„ ë™ì¼)
+3.2  ì‹¤í–‰ì‹œì  ë•Œë¬¸ì— : return Type(x) , void(x) >  default  void  ìƒëµ 
+3.3  ì‹¤í–‰ì‹œì  ê°ì²´ìƒì„±ì‹œ  í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜ 
 
-4. »ı¼ºÀÚ ÇÔ¼ö´Â overloading °¡´É
+4. ëª©ì  : ìƒì„±ëœ ê°ì²´ë§ˆë‹¤ ë‹¤ë¥¸ ì´ˆê¸°ê°’ ë¶€ì—¬í•˜ê¸° .. ^^
+class Car { int door=5;}
 
-****************°³¹ßÀÚÀÇ ÀÇµµ**************
-* ¿¹¿ÜÀûÀ¸·Î overloadingµÈ »ı¼ºÀÚ ÇÔ¼ö°¡ ÇÏ³ª¶óµµ Á¸ÀçÇÑ´Ù¸é ÄÄÆÄÀÏ·¯´Â ÀÚµ¿À¸·Î default ConstructorÀ» ¸¸µéÁö ¾Ê´Â´Ù.
-* default ConstructorÀ» »ç¿ëÇØ¾ßÇÑ´Ù¸é °­Á¦(Á÷Á¢)±¸ÇöÇØ¾ßÇÑ´Ù.
-+) ÃÊ±âÀÚ
-static >> static { } /ÀÏ¹İ ÇÔ¼ö >>  {}
+5. ìƒì„±ì í•¨ìˆ˜ëŠ”  overloading ì´ ê°€ëŠ¥í•˜ë‹¤ 
+
+*****************  ê°œë°œìì˜ ì˜ë„  *****************
+*ì˜ˆì™¸ì ìœ¼ë¡œ  overloading  ëœ ìƒì„±ì í•¨ìˆ˜ê°€ í•˜ë‚˜ë¼ë„ ì¡´ì¬í•œë‹¤ë©´ ì»´íŒŒì¼ëŸ¬ëŠ” ìë™ìœ¼ë¡œ     default ìƒì„±ì
+*í•¨ìˆ˜ë¥¼ ë§Œë“¤ì§€ ì•ŠëŠ”ë‹¤
+*ë§Œì•½   default  ìƒì„±ì í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ê³  ì‹¶ë‹¤ë©´ ê°•ì œ êµ¬í˜„í•˜ì„¸ìš”
+*why?  ê°œë°œìì˜ ê°•ì œì  ì˜ë„ê°€ ë“¤ì–´ ìˆëŠ” ê²ƒ  
+ì¼ë°˜ í•¨ìˆ˜ë³´ë‹¤ ì½”ë“œëŸ‰ì˜ ê°ì†Œ ...... 
 */
 
 class House {
@@ -35,7 +38,7 @@ class House {
 class Car {
 	String name;
 
-	Car() { // default ConstructorÀº ¸í½ÃÇÏÁö ¾Ê¾Æµµ ÀÚµ¿À¸·Î »ı¼ºµÈ´Ù.
+	Car() { // default Constructor
 	}
 }
 
@@ -44,7 +47,7 @@ class Car2 {
 
 	Car2() { // default Constructor
 		System.out.println("Car2 Constructor.");
-		carname = "pony"; // member fieldÀÇ ÃÊ±âÈ­
+		carname = "pony"; // member fieldï¿½ï¿½ ï¿½Ê±ï¿½È­
 	}
 }
 
@@ -52,7 +55,7 @@ class Car3 {
 	int number;
 
 	Car3() {
-		System.out.println("member filed ÃÊ±âÈ­");
+		System.out.println("member filed ï¿½Ê±ï¿½È­");
 		// number = 10;
 	}
 }
@@ -80,7 +83,7 @@ class Car4 {
 
 public class Ex13_Constructor_Function {
 	public static void main(String[] args) {
-		Car c = new Car(); // Car()ÇÔ¼ö È£Ãâ
+		Car c = new Car(); // Car()ï¿½Ô¼ï¿½ È£ï¿½ï¿½
 		Car2 c2 = new Car2();
 		System.out.println("car2.carname : " + c2.carname);
 		Car2 c22 = new Car2();

@@ -1,11 +1,11 @@
 public class Ex08_Static_Method {
 
 	public static void method() {
-		System.out.println("ÀÏ¹İ ÇÔ¼ö È£Ãâ");
+		System.out.println("ì¼ë°˜");
 	}
 
 	public static void smethod2() {
-		System.out.println("static ÇÔ¼ö È£Ãâ");
+		System.out.println("static");
 	}
 
 	public static void main(String[] args) {

@@ -4,86 +4,60 @@ import java.util.regex.Pattern;
 
 public class Ex07_Printf_format {
 	public static void main(String[] args) {
+		// java :System.out.println();
+		// C#: Console.WriteLine();
 
-		// java : System.out.println();
-		// c# : Console.WriteLine();
-		// ¿À¹ö·Îµù : ÇÏ³ªÀÇ ±â´ÉÀÌ ¿©·¯ Å¸ÀÔÀÇ ¸Å°³º¯¼ö(ÆÄ¶ó¹ÌÅÍ)¸¦ ¹Ş´Â ÇüÅÂ
 		System.out.println("A");
 		System.out.print("B");
 		System.out.print("C");
-		System.out.println("D"); // ln-> ÁÙ¹Ù²Ş
+		System.out.println("D"); // ì¤„ë°”ê¿ˆ
 
 		int num = 100;
 		System.out.println(num);
-		System.out.println("num °ªÀº " + num + "ÀÔ´Ï´Ù.");
-
-		// format Çü½Ä ¹®ÀÚ
-		// %d (10Áø¼ö Çü½ÄÀÇ Á¤¼ö) >>d¶ó´Â ÀÚ¸®¿¡
-		// %f (½Ç¼ö)
-		// %s (¹®ÀÚ¿­)
-		// %c (¹®ÀÚ)
-		// Æ¯¼ö¹®ÀÚ : \¤µ, \¤Ì
-		System.out.printf("num °ªÀº[%d]ÀÔ´Ï´Ù ±×¸®°í [%d] µµ ÀÖ¾î¿ä.\n", num, 1000);
+		System.out.println("num ê°’ì€ :" + num + " ì…ë‹ˆë‹¤");
+		// í˜•ì‹(format)
+		System.out.printf("num ê°’ì€ :%d ì…ë‹ˆë‹¤\n", num);
+		// format í˜•ì‹ ë¬¸ì
+		// %d (10ì§„ìˆ˜ í˜•ì‹ì˜ ì •ìˆ˜) >> dë¼ëŠ” ìë¦¬ì—
+		// %f (ì‹¤ìˆ˜)
+		// %s (ë¬¸ìì—´)
+		// %c (ë¬¸ì)
+		// íŠ¹ìˆ˜ë¬¸ì : \t (Tab) , \n (ì¤„ë°”ê¿ˆ)
+		System.out.printf("num ê°’ì€ [%d] ì…ë‹ˆë‹¤ ê·¸ë¦¬ê³  [%d] ë„ ìˆì–´ìš”\n", num, 1000);
 
 		float f = 3.14f;
 		System.out.println(f);
-		System.out.printf("f º¯¼ö °ªÀº [%f]ÀÔ´Ï´Ù.\n", f);
-		System.out.printf("f º¯¼ö °ªÀº [%.2f]ÀÔ´Ï´Ù.\n", f);
+		System.out.printf("f ë³€ìˆ˜ê°’ì€ %f ì…ë‹ˆë‹¤\n", f); // f ë³€ìˆ˜ê°’ì€ 3.140000 ì…ë‹ˆë‹¤
 
-		// cmd(console)¿¡¼­ ÀÔ·ÂÇÑ °ª ÀĞ¾î¿À±â
-		// Scanner sc = new Scanner(System.in);
-//		System.out.println("°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä");
-//		String value = sc.nextLine(); // ´ë±â »óÅÂ·Î ÀüÈ¯ »ç¿ëÀÚ ÀÔ·Â°ªÀ» ¹®ÀÚ¿­·Î Àü´Ş
-//
-//		System.out.println("ÀÔ·Â°ª : " + value);
-//
-//		System.out.println("Á¤¼ö°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä");
-//		int number = sc.nextInt(); // »ç¿ëÀÚ ÀÔ·Â°ªÀ» Á¤¼öÇüÀ¸·Î
-//		System.out.println("Á¤¼ö°ª : " + number);
-//		
-		// sc.nextFloat(); ½Ç¼ö°ª
-
-		// ±ÇÀå»çÇ× : nextInt, nextFloat º¸´Ù´Â nextLine()À» »ç¿ë
-
-		// Point
-		// **[¹®ÀÚ¸¦ ¼ıÀÚ·Î º¯°æ]**
-		// Integer.parseInt(value);
-		// Float.parseFloat(s)
-		// Double.parseDouble(s)
-//		System.out.println("¼ıÀÚ ÀÔ·ÂÇÏ¼¼¿ä");
-//		int number = Integer.parseInt(sc.nextLine());
-//		System.out.println("ÀÔ·Â°ª(Int) : " + number);
-//
-//		// Tip
-//		String data = String.valueOf(10000);
-//		System.out.println("ÀÔ·Â°ª(String) : " + data);
-
-		// Quiz
+		// cmd(console) ì°½ì—ì„œ ì…ë ¥í•œ ê°’ ì½ì–´ì˜¤ê¸°
+		// java.util.Scanner sc = new java.util.Scanner(System.in);
+		// import êµ¬ë¬¸ ì‚¬ìš© ..... Scanner ì‚¬ìš©
 		Scanner sc = new Scanner(System.in);
-		int num1 = 0;
-		int num2 = 0;
-		System.out.print(">ÀÔ·Â°ª : ");
-		num1 = Integer.parseInt(sc.nextLine());
-		System.out.print(">ÀÔ·Â°ª(±âÈ£) : ");
-		String oper = sc.nextLine();
-		System.out.print(">ÀÔ·Â°ª : ");
-		num2 = Integer.parseInt(sc.nextLine());
-		sc.close();
+		System.out.println("ê°’ì„ ì…ë ¥í•˜ì„¸ìš”");
 
-		int result = 0;
-		if (oper.equals("+")) {
-			result = num1 + num2;
-		} else if (oper.equals("-")) {
-			result = num1 - num2;
-		} else if (oper.equals("*")) {
-			result = num1 * num2;
-		} else if (oper.equals("/")) {
-			result = num1 * num2;
-		} else {
-			System.err.println("±âÈ£ ¿À·ù!");
-			return; // ÇÁ·Î±×·¥ÀÇ Á¾·á
-		}
+		// String value = sc.nextLine(); //ëŒ€ê¸° nextLine() ë‹¹ì‹ ì´ ì…ë ¥í•œ ê°’ì„ ë¬¸ìì—´ë¡œ ì „ë‹¬
+		// System.out.println("ì…ë ¥ê°’ :" + value);
 
-		System.out.println(">¿¬»ê°á°ú : " + result);
+		// int number = sc.nextInt();//ì •ìˆ˜ê°’ì„ ì½ì–´ì„œ ë¦¬í„´ í•˜ê² ìŠµë‹ˆë‹¤
+		// System.out.println("ì •ìˆ˜ê°’ : " + number);
+
+		// sc.nextFloat() ì‹¤ìˆ˜ê°’ ì½ê¸°
+
+		// ê¶Œì¥ì‚¬í•­ : nextInt , nextFloat í•¨ìˆ˜ ë³´ë‹¤ëŠ” nextLine() ì„ ì‚¬ìš©í•˜ì
+		// Today point
+		// [ ë¬¸ìë¥¼ -> ìˆ«ìë¡œ ]
+		// Integer.parseInt(s) ë¬¸ìë¥¼ ì •ìˆ˜ë¡œ
+		// Float.parseFloat(s) ë¬¸ìë¥¼ ì‹¤ìˆ˜ë¡œ
+		// Double.parseDouble(s) ë¬¸ìë¥¼ ì‹¤ìˆ˜ë¡œ
+
+		System.out.println("ìˆ«ì ì…ë ¥í•˜ì„¸ìš”");
+		int number = Integer.parseInt(sc.nextLine());
+		System.out.println("ì •ìˆ˜ê°’ : " + number);
+
+		// Tip
+		// ìˆ«ìë¥¼ -> ë¬¸ìë¥¼ (ê°€ë”)
+		String data = String.valueOf(10000);
+		System.out.println(data);
 	}
+
 }

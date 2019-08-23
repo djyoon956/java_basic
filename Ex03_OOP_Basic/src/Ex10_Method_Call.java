@@ -1,4 +1,4 @@
-// Å¬·¡½º == Å¸ÀÔ(Å« Å¸ÀÔ)
+//í´ë˜ìŠ¤ == íƒ€ì…(í°íƒ€ì…)
 class Data {
 	int i;
 }
@@ -7,23 +7,22 @@ public class Ex10_Method_Call {
 	public static void main(String[] args) {
 		Data d = new Data();
 		d.i = 100;
-		// Point (d ¶ó´Â º¯¼ö´Â ÂüÁ¶°ª, ¾î¶² Å¸ÀÔÀ» °®´Â : Data)
+		// POINT (d ë¼ëŠ” ë³€ìˆ˜ëŠ” ì£¼ì†Œê°’(ì°¸ì¡°) ì–´ë–¤ íƒ€ì…ì„ ê°–ëŠ”: Data)
 		scall(d);
-		System.out.println("scall È£Ãâ ÈÄ : " + d.i);
+		System.out.println("scall È£ï¿½ï¿½ ï¿½ï¿½ : " + d.i);
 
 		vcall(d.i);
-		System.out.println("vcall È£Ãâ ÈÄ : " + d.i);
+		System.out.println("vcall È£ï¿½ï¿½ ï¿½ï¿½ : " + d.i);
 	}
 
-	// staticÀº °´Ã¼ »ı¼º Àü¿¡ ¸Ş¸ğ¸®¿¡ ¿Ã¶ó°¨
-	static void scall(Data data) { // ÁÖ¼Ò°ª Àü´Ş (reference by value)
-		// data º¯¼ö´Â Data¶ó´Â Å¬·¡½ºÀÇ ÁÖ¼Ò°ªÀ» ¹ŞÀ¸¸é µÈ´Ù.
-		// Data°¡ ÀÇ¹ÌÇÏ´Â °ÍÀº ÁÖ¼Ò°ª
-		System.out.println("scall È£Ãâ : " + data.i);
+	static void scall(Data data) { // void m(int i) : ì£¼ì†Œê°’ ì „ë‹¬
+		// data ë¼ëŠ” ë³€ìˆ˜ëŠ” Dataë¼ëŠ” í´ë˜ìŠ¤ì˜ ì£¼ì†Œê°’ì„ ë°›ìœ¼ë©´ ë˜ìš”
+		// Data ê°€ ì˜ë¯¸í•˜ëŠ” ê²ƒì€ ì£¼ì†Œê°’
+		System.out.println("scall È£ï¿½ï¿½ : " + data.i);
 		data.i = 1111;
 	}
 
-	static void vcall(int x) { // °ª Àü´Ş (call by value)
+	static void vcall(int x) { // (call by value)
 		System.out.println("before : " + x);
 		x = 8888;
 		System.out.println("after : " + x);

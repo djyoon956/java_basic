@@ -1,7 +1,7 @@
 package kr.or.bit.common;
 
 public class CommonClass {
-	int d_iv; // default Á¢±ÙÀÚ
-	public int p_iv; // ÀüÃ¼ Á¢±Ù°¡´É
-	private int pri_iv; // °³ÀÎÀûÀÎ....Ä¸½¶È­ ±¸Çö
+	int d_iv; // ì»´íŒŒì¼ëŸ¬ê°€ ì•Œì•„ì„œ default int d_iv í•´ì„í•©ë‹ˆë‹¤
+	public int p_iv; // ëˆ„êµ¬ë‚˜ ì–´ë””ì„œë‚˜ ì‚¬ìš©ê°€ëŠ¥
+	private int pri_iv; // ê°œì¸ì ì¸ ... ìº¡ìŠí™”êµ¬í˜„ ....
 }
