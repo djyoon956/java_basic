@@ -2,10 +2,10 @@ package java_doc;
 
 public class CharTypeUnicode {
 	public static void main(String[] args) {
-		char ch1 = 'Çæ';
+		char ch1 = 'A';
 		char ch2 = 'È®';
-		char ch3 = 54736; // ¹®ÀÚ 'Çæ'ÀÇ À¯´ÏÄÚµå °ª
-		char ch4 = 54869; // ¹®ÀÚ 'È®'ÀÇ À¯´ÏÄÚµå °ª
+		char ch3 = 54736; // ï¿½ï¿½ï¿½ï¿½ 'ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½
+		char ch4 = 54869; // ï¿½ï¿½ï¿½ï¿½ 'È®'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½
 		char ch5 = 0xD5D0;
 		char ch6 = 0xD655;
 

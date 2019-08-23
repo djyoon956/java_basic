@@ -1,3 +1,4 @@
+package lib;
 
 public class Clothes {
 	private int price; // 가격
@@ -29,12 +30,12 @@ public class Clothes {
 		return capital;
 	}
 
-	public Clothes(String cbrand, String ckind, int cprice) {
-		brand = cbrand;
-		kind = ckind;
-		price = cprice;
+	public Clothes(String brand, String kind, int price) {
+		this.brand = brand;
+		this.kind = kind;
+		this.price = price;
 		possessioncount++;
-		cprice -= 10000;
+		price -= 10000;
 	}
 
 	public void sales() {
