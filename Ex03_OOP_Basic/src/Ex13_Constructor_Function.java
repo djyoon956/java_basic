@@ -79,22 +79,34 @@ class Car4 {
 		this.wheel = wheel;
 		System.out.println("overloading2 door ,wheel : " + this.door + "," + this.wheel);
 	}
+
+	Car2 Test() {
+		Car2 temp= new Car2();
+		return temp;
+	}
+	
+	void Test1(Car car) {
+		car.name="형남";
+	}
 }
 
 public class Ex13_Constructor_Function {
 	public static void main(String[] args) {
-		Car c = new Car(); // Car()�Լ� ȣ��
-		Car2 c2 = new Car2();
-		System.out.println("car2.carname : " + c2.carname);
-		Car2 c22 = new Car2();
-		System.out.println("car22.carname : " + c22.carname);
+//		Car c = new Car(); // Car()�Լ� ȣ��
+//		Car2 c2 = new Car2();
+//		System.out.println("car2.carname : " + c2.carname);
+//		Car2 c22 = new Car2();
+//		System.out.println("car22.carname : " + c22.carname);
+//
+//		Car4 car4 = new Car4(10, 50);
+//		Car4 car5 = new Car4(55, 100);
+//
+//		House h = new House();
+//		System.out.println("h.doorcolor : " + h.doorcolor);
+//		House h2 = new House("red");
+//		System.out.println("h2.doorcolor : " + h2.doorcolor);
 
 		Car4 car4 = new Car4(10, 50);
-		Car4 car5 = new Car4(55, 100);
-
-		House h = new House();
-		System.out.println("h.doorcolor : " + h.doorcolor);
-		House h2 = new House("red");
-		System.out.println("h2.doorcolor : " + h2.doorcolor);
+		Car2 c2 = car4.Test();
 	}
 }

@@ -1,3 +1,5 @@
+import java.util.function.IntPredicate;
+
 /*
 객체지향언어
 1. 상속 (재사용성)
@@ -29,7 +31,7 @@ class Human {
 }
 
 class OverTest {
-	void add(Human h) { //개수는 같지만 Type 틀리면 인정
+	void add(Human h) { // 개수는 같지만 Type 틀리면 인정
 		h.name = "ȫ�浿";
 		h.age = 100;
 		System.out.println("parameter h �ּҰ� :" + h);
@@ -42,16 +44,44 @@ class OverTest {
 	String add(String s) {
 		return "Hello" + s;
 	}
+
+	int[] add(int[] param) { // 주소값(int[] 참조 주소값)
+		int[] target = new int[param.length];
+		for (int i = 0; i < param.length; i++) {
+			target[i] = param[i] + 1;
+		}
+
+		return target;
+	}
+
+	int[] add(int[] so, int[] so2) {
+		so = so2;
+		return so;
+	}
 }
 
 public class Ex11_Method_Overloading {
 	public static void main(String[] args) {
 		OverTest ot = new OverTest();
-		System.out.println(ot.add(100));
-		System.out.println(ot.add("100"));
-		Human m = new Human();
-		System.out.println("m �ּҰ� :" + m);
-		ot.add(m);
-		System.out.println(m);
+//		System.out.println(ot.add(100));
+//		System.out.println(ot.add("100"));
+//		Human m = new Human();
+//		System.out.println("m �ּҰ� :" + m);
+//		ot.add(m);
+//		System.out.println(m);
+
+		// Array parameter로 또는 return type으로 사용
+		int[] source = { 10, 20, 30, 40, 50 };
+		int[] target = ot.add(source);
+		System.out.println(source == target);
+
+		// 개선된 for문
+		for (int value : target)
+			System.out.println(value);
+
+		int[] so = { 10, 20, 30 };
+		int[] ta = { 11, 21, 31 };
+		int[] ta2 = ot.add(so, ta);
+		System.out.println();
 	}
 }
