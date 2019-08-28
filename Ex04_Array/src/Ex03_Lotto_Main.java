@@ -25,10 +25,19 @@ public class Ex03_Lotto_Main {
 		System.out.println();
 
 		for (int i = 0; i < lotto.length; i++) {
-			for (int j = 0; j < lotto.length - 1; j++) {
-				if (lotto[j] > lotto[j + 1]) {
-					int temp = lotto[j + 1];
-					lotto[j + 1] = lotto[j];
+//			for (int j = 0; j < lotto.length - 1; j++) {
+//				if (lotto[j] > lotto[j + 1]) {
+//					int temp = lotto[j + 1];
+//					lotto[j + 1] = lotto[j];
+//					lotto[j] = temp;
+//				}
+//			}
+
+			// 선택정렬
+			for (int j = i + 1; j < lotto.length; j++) {
+				if (lotto[i] > lotto[j]) {
+					int temp = lotto[i];
+					lotto[i] = lotto[j];
 					lotto[j] = temp;
 				}
 			}
