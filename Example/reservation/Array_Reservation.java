@@ -44,15 +44,18 @@ class Reservation {
 	}
 
 	private void search() {
-		System.out.print("   ");
-		for (int i = 0; i < 10; i++) {
-			System.out.printf("%2d ", i);
+		System.out.print("\t");
+		for (int i = 1; i < 11; i++) {
+			System.out.printf("%d\t", i);
 		}
 		System.out.println();
 		for (int i = 0; i < seats.length; i++) {
-			System.out.println(i+" "+Arrays.toString(seats[i]));
+			System.out.print(i + "\t");
+			for (char value : seats[i])
+				System.out.print(value + "\t");
+
+			System.out.println();
 		}
-			
 	}
 
 	private void reservation() {
