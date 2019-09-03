@@ -5,7 +5,6 @@ class Sort {
 	public void insertionSort(int[] arr) {
 		System.out.println("**********Insertion Sort**********");
 
-
 	}
 
 	// 0번째 index부터 현재 index+1 부터 끝까지 비교하여 자리를 바꾼다.
@@ -23,13 +22,12 @@ class Sort {
 		}
 	}
 
-	
 	// 0번째 index부터 가장 근접한 두 개를 비교하며 정렬한다.
 	public void bubbleSort(int[] arr) {
 		System.out.println("**********Bubble Sort**********");
 
 		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length - 1; j++) {
+			for (int j = 0; j < arr.length - i - 1; j++) {
 				if (arr[i] > arr[j + 1]) {
 					int temp = arr[j + 1];
 					arr[j + 1] = arr[j];
