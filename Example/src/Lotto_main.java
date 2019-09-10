@@ -68,8 +68,11 @@ class Lotto {
 
 	private String printLotto(List<Set<Integer>> lottos) {
 		String lottoString = "";
+		String output = "───────────────────────\n";
+		lottoString += output;
+		System.out.print(output);
 		for (int i = 0; i < lottos.size(); i++) {
-			String output = (char) (65 + i) + " 자동 ";
+			output = (char) (65 + i) + " 자동 ";
 			lottoString += output;
 			Iterator<Integer> iterator = lottos.get(i).iterator();
 			System.out.print(output);
@@ -82,6 +85,10 @@ class Lotto {
 			lottoString += output;
 			System.out.print(output);
 		}
+		output = "───────────────────────\n";
+		lottoString += output;
+		System.out.print(output);
+
 		return lottoString;
 	}
 }
