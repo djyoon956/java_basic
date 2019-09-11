@@ -1,0 +1,3 @@
+word = C:\SmartWeb\IOTemp\a.txt
+word = C:\SmartWeb\IOTemp\file.txt
+word = C:\SmartWeb\IOTemp\new.txt

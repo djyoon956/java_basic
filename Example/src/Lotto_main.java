@@ -14,16 +14,55 @@ class CustomDateFormat {
 }
 
 class Lotto {
+	private Scanner scanner;
+	ArrayList<String> outputs;
+
+	Lotto() {
+		scanner = new Scanner(System.in);
+		outputs = new ArrayList<>();
+	}
 
 	public void start() {
+		loop1: while (true) {
+			int selectionMenu = selectedMenu();
+			switch (selectionMenu) {
+			case 1:
+				getLotto();
+				break;
+			case 2:
+				saveLotteFile();
+				break loop1;
+			}
+		}
+	}
+
+	private int selectedMenu() {
+		System.out.println("********************");
+		System.out.println("1. 당첨 예상 번호 추출");
+		System.out.println("2. 프로그램 종료 및 로또 저장");
+		System.out.println("********************");
+
+		int inputNumber = 0;
+		while (true) {
+			System.out.print(">> ");
+			if (scanner.hasNextInt()) {
+				inputNumber = scanner.nextInt();
+				if (inputNumber > 0 && inputNumber < 3)
+					break;
+			} else
+				scanner.next();
+		}
+
+		return inputNumber;
+	}
+
+	private void getLotto() {
 		int count = inputCount();
 		List<Set<Integer>> lottos = getLottoNumber(count);
-		String output = printLotto(lottos);
-		saveLotteFile(output);
+		printLotto(lottos);
 	}
 
 	private int inputCount() {
-		Scanner scanner = new Scanner(System.in);
 		System.out.println("로또 출력 횟수를 입력 하세요. (1회부터 최대 5회까지 가능)");
 		int inputNumber = 0;
 		while (true) {
@@ -47,28 +86,36 @@ class Lotto {
 				int random = (int) (Math.random() * 45) + 1;
 				numbers.add(random);
 			}
-
 			lottos.add(numbers);
 		}
 
 		return lottos;
 	}
 
-	private void saveLotteFile(String output) {
+	private void saveLotteFile() {
+		if (outputs.size() < 1)
+			return;
+
 		String path = "Lotto.txt";
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(path, true))) {
-			writer.write("발행일 : " + CustomDateFormat.date() + " " + CustomDateFormat.time());
-			writer.newLine();
-			writer.write(output);
-			writer.newLine();
+			System.out.println("********************");
+			for (int i = 0; i < outputs.size(); i++) {
+				writer.write((i + 1) + "회차");
+				writer.newLine();
+				writer.write("발행일 : " + CustomDateFormat.date() + " " + CustomDateFormat.time());
+				writer.newLine();
+				writer.write(outputs.get(i));
+				writer.newLine();
+			}
+			System.out.println("********************");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
 
-	private String printLotto(List<Set<Integer>> lottos) {
+	private void printLotto(List<Set<Integer>> lottos) {
 		String lottoString = "";
-		String output = "───────────────────────\n";
+		String output = "────────────────\n";
 		lottoString += output;
 		System.out.print(output);
 		for (int i = 0; i < lottos.size(); i++) {
@@ -85,11 +132,11 @@ class Lotto {
 			lottoString += output;
 			System.out.print(output);
 		}
-		output = "───────────────────────\n";
+		output = "────────────────\n";
 		lottoString += output;
 		System.out.print(output);
 
-		return lottoString;
+		outputs.add(lottoString);
 	}
 }
 
