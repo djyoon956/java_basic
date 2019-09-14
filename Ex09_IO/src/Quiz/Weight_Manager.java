@@ -140,15 +140,19 @@ public class Weight_Manager {
 
 	// 몸무게 검색하는 함수
 	public void searchWeight() throws IOException {
+		// + 입력 이름을 기준으로 파일을 찾아 입력된 password값을 검사한다.
 		boolean passcheck = fileCheck();
 
+		// + password가 일치했을때
 		if (passcheck) {
 			System.out.println("*****************************************************************");
 			System.out.println("\t\t" + this.str_name + "님의 몸무게는 " + txt_data[0] + " kg 입니다.");
 			System.out.println("*****************************************************************");
 			System.out.println();
 
-		} else {
+		} 
+		// + password가 일치하지 않았을때로 비밀번호 변경 로직없이 return 처리(해당 함수의 종료)한다.
+		else {
 			return;
 		}
 		System.out.println();
@@ -156,9 +160,10 @@ public class Weight_Manager {
 
 	// ===============================================//몸무게 변경하기
 	public void changeWeight() throws IOException {
-
+		// + 입력 이름을 기준으로 파일을 찾아 입력된 password값을 검사한다.
 		boolean passcheck = fileCheck();
 
+		// + password가 일치했을때
 		if (passcheck) {
 			System.out.println("*****************************************************************");
 			System.out.println("\t\t" + this.str_name + "님의 몸무게는 " + this.txt_data[0] + " kg 입니다.");
@@ -176,7 +181,9 @@ public class Weight_Manager {
 			bw.write(this.str_password);
 
 			bw.close();
-		} else {
+		}
+		// + password가 일치하지 않았을때로 비밀번호 변경 로직없이 return 처리(해당 함수의 종료)한다.
+		else {
 			return;
 		}
 
@@ -187,8 +194,10 @@ public class Weight_Manager {
 	// ===============================================//패스워드 변경하기
 	public void changePassword() throws IOException {
 
+		// + 입력 이름을 기준으로 파일을 찾아 입력된 password값을 검사한다.
 		boolean passcheck = fileCheck();
 
+		// + password가 일치했을때
 		if (passcheck) {
 			System.out.println("*****************************************************************");
 			System.out.println("\t\t" + this.str_name + "님의 비밀번호는는 " + this.str_password + " 입니다.");
@@ -197,13 +206,16 @@ public class Weight_Manager {
 			System.out.print("\t\t변경할 패스워드 : ");
 			this.str_password = keyboard.nextLine();
 
+			// + 비밀번호의 변경으로 파일을 새로 저장한다.
 			FileWriter fw = new FileWriter(f);
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(this.str_weight + ":");
 			bw.write(this.str_password);
 			bw.close();
 
-		} else {
+		}
+		// + password가 일치하지 않았을때로 비밀번호 변경 로직없이 return 처리(해당 함수의 종료)한다.
+		else {
 			return;
 		}
 
@@ -267,7 +279,7 @@ public class Weight_Manager {
 				}
 			}
 		}
-		// + C://WeightMgData/[입력 이름].txt이 존재하지 않을때
+		// + C://WeightMgData/[입력 이름].txt 파일이 존재하지 않을때
 		else {// f.getName()
 			System.out.println(str_name + "님 이(가) 존재하지 않습니다.");
 			boo = false;
