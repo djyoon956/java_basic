@@ -1,10 +1,12 @@
-package Quiz;
+package Quiz.BMI;
 
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
+
+import Quiz.BMI.BMI;
+
 import java.io.*;
-import Quiz.BMI;
 
 public class BMICheck {
 	static HashMap<Integer, BMI> map = new HashMap<Integer, BMI>();

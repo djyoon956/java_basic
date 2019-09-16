@@ -1,4 +1,4 @@
-package Quiz;
+package Quiz.BMI;
 
 import java.io.Serializable;
 import java.util.Scanner;

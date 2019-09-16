@@ -13,5 +13,6 @@
 	<classpathentry kind="src" path="Chapter14"/>
 	<classpathentry kind="src" path="Chapter15"/>
 	<classpathentry kind="src" path="Chapter21"/>
+	<classpathentry kind="src" path="Chapter34"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
