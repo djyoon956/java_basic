@@ -10,6 +10,11 @@ main 에서 2개 실행
 
 단어를 하나라고 입력해서 확인 버튼을 누르면 시간을 멈추게 하세요.
 hint) 공유 자원
+
+Thread 상태 정보
+
+join() : thread에 종료를 기다린다.
+		  ex) 계산 작업을 하는 스레드가 모든 계산을 마쳤을 때 그 결과값을 
 */
 
 class Timer extends Thread {
@@ -45,5 +50,14 @@ public class Ex05_WordGame {
 		Word word = new Word();
 		timer.start();
 		word.start();
+
+		try {
+			timer.join();
+			word.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("Main end...");
 	}
 }
