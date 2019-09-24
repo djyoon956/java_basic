@@ -25,8 +25,5 @@ public class Timeeer {
 //			System.out.println("타이머 밖");
 //		}
 //		System.out.println("타이머 밖");
-
-		String teString = "950506-2222222";
-		Calendar.YEAR-
 	}
 }
