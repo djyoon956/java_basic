@@ -5,5 +5,6 @@
 	<classpathentry kind="src" path="sort"/>
 	<classpathentry kind="src" path="reservation"/>
 	<classpathentry kind="src" path="adressBook"/>
+	<classpathentry kind="src" path="bank"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
