@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class no_2445 {
+public class No_2445 {
 	public static void main(String[] args) {
 		int inputNum = new Scanner(System.in).nextInt();
 		int height = inputNum * 2;
